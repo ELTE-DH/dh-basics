@@ -1,0 +1,31 @@
+name: build-sphinx-to-gh-pages
+
+env:
+    GITHUB_ACTOR: dlazesz
+    GITHUB_REPOSITORY: ELTE-DH/dh-basics
+    GITHUB_IO_URL: https://elte-dh.github.io/dh-basics/
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    build:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout the repo
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 1
+            - name: Set up Python 3.x
+              uses: actions/setup-python@v2
+              with:
+                  # Semantic version range syntax or exact version of a Python version
+                  python-version: '3.x'
+                  # Optional - x64 or x86 architecture, defaults to x64
+                  architecture: 'x64'
+            - name: Install dependencies and run build script for Sphinx pages
+              run: make github
+              shell: bash
