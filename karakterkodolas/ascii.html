@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASCII &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Az ISO 8859 család" href="iso8859_csalad.html" />
+    <link rel="prev" title="A karakterkódolás története" href="karakterkodolas_tortenete.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Digitális bölcsészet alapok
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="karakterkodolas_index.html">Karakterkódolás</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bevezetes.html">Bevezetés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html">Absztrakciós szintek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html">A karakterkódolás története</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ASCII</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-szokas-hatalma">A szokás hatalma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-vezerlokarakterek">A vezérlőkarakterek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-reprezentacio">A reprezentáció</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-kis-es-nagybetusites">A kis- és nagybetűsítés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii-rajzok-ascii-art">ASCII rajzok (ASCII art)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="iso8859_csalad.html">Az ISO 8859 család</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html">Nemzetköziesítés hackeléssel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html">A Unicode szemlélete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html">A Unicode reprezentációk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html">Karakterkódolás a gyakorlatban</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../impresszum.html">Impresszum</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digitális bölcsészet alapok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="karakterkodolas_index.html">Karakterkódolás</a></li>
+      <li class="breadcrumb-item active">ASCII</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/karakterkodolas/ascii.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ascii">
+<span id="id1"></span><h1>ASCII<a class="headerlink" href="#ascii" title="Link to this heading"></a></h1>
+<p>Az automatizált kommunikációs berendezések, mint a szikratávíró, ahol a hardver még sokban hasonlított egy írógépre – annyi különbséggel, hogy nem tartozott hozzá személyzet –, hatékonyságuk miatt hamar elterjedtek vezetékes és vezeték nélküli átviteli rendszerek formájában jóval az első „igazi” számítógépek megjelenése előtt. Különféle gépek küldtek és fogadtak szöveges üzeneteket, ezért a távközlési cél széles megvalósításához az általuk használt kódrendszereket szabványosítani kellett. Az első ilyen átfogó és elterjedt szabvány az <strong>ASCII (American Standard Code for Information Interchange)</strong> kódtábla volt, amit 1967-ben vezettek be.</p>
+<p>Az ASCII minden karaktert <strong>7-biten</strong> kódol (2<sup>7</sup> = 128 karakter). A nyolcadik bit eleinte az átviteli hibák jelzésére szolgált, később figyelmen kívül hagyták. Az ASCII kódtábla azonban még így is a <em>Braille-írás</em> vagy <em>Morse-kód</em> által leírható karakterek számánál kétszer többet foglal magában. Az 1967-es változata már tartalmaz kis és nagy angol betűket, számokat és központozási jeleket (összesen 95-öt), valamint úgynevezett vezérlő karaktereket (összesen 33-at) az automatizált írógépek közötti szövegátvitelhez és megjelenítéshez. Ezek a karakterek megtalálhatóak a modern kódtáblákban, mivel kivétel nélkül mindegyik (legalább kifejezőerejében, ha reprezentációban nem is mindig) az ASCII-ra épül.</p>
+<section id="a-szokas-hatalma">
+<span id="id2"></span><h2>A szokás hatalma<a class="headerlink" href="#a-szokas-hatalma" title="Link to this heading"></a></h2>
+<p>Az ASCII kódtáblában a számok és nagybetűk elsőbbsége a kezdetleges írógépektől jön (lásd <a class="reference internal" href="karakterkodolas_tortenete.html#bevitel-gyorsitasa"><span class="std std-ref">A bevitel gyorsítása írógéppel</span></a> rész), melyek eleinte csak számokat, majd számokat és nagybetűket tudtak írni, kisbetűket csak jóval később. A számítógépes megjelenítőkben használt 80-as/120-as sorszélesség az írógépre és annak elődeire vezethető vissza (lásd <a class="reference internal" href="karakterkodolas_tortenete.html#iras-kozbeni-formazas"><span class="std std-ref">Írás közbeni formázás és egyéb vezérlőelemek írógépen és képernyőn</span></a> rész). A két médium tulajdonságainak összeegyeztetése és egységes kezelése adta az ASCII erősségét a kortársaival szemben.</p>
+<p>A kialakításakor – és még napjainkban is – a szövegeknek a papíralapú és a folyamatosan fejlődő digitális kijelzőkön történő kezelése egymás mellett volt jelen. A digitális kijelző viszont nem rendelkezik a távíró szalagjának vagy az írógép papírjának korlátaival, hiszen az „végtelenségig” görgethető vízszintesen és függőlegesen is, mint egy végtelen „festővászon”. Ámde az időben előre haladást valahogy reprezentálni kellett. Az addigi gépesített megoldások (a szalagos távírók és a későbbi fényújság oldalra görgetése) nyomán az ókori tekercsek analógiája, a <strong>függőleges görgetés</strong> honosodott meg a modernebb „könyvek lapozása” analógia helyett, ahol több dolgot is kezelni kellett volna egyszerre. (Illusztráció: <a class="reference external" href="https://www.youtube.com/watch?v=pQHX-SjgQvQ">Medieval helpdesk with English subtitles</a>). A mai napig tart a „függőlegesen folyamatosan görgethető tekercs” elméleti szembenállása a „könyvbe szervezhető” diszkrét lapokkal, amelyekhez tartalomjegyzék készülhet, hogy így oda lehessen lapozni a kívánt oldalhoz. A tekercs és könyv. mint a folytonosság szervezésének formája sokszor visszatérő analógiák az informatikában, az ASCII kódtáblában viszont helytakarékosság miatt csak az első van kezelve.</p>
+<p>Az ASCII a szöveg gépi kezelését segítő szabványok láncolatában pont középen helyezkedik el: a benne foglalt elvek, valamint az azokat kivitelező <em>vezérlőkarakterek</em> meghatározó része, ahogy a szövegek kezelésének többi fogalma is az írógépektől származik, de a képernyőkön egyaránt jól alkalmazható. Emiatt az ASCII a <strong>szöveges megjelenítőkben (command line terminal)</strong> a mai napig használatban van, miközben napjainkig lehetővé teszi a digitális kijelzők fejlődését a szabványokkal való folyamatos kompatibilitás révén az írógépektől napjainkig (Illusztráció: <a class="reference external" href="https://www.youtube.com/watch?v=Yq3IkQoX5_I">Helpdesk version 2.0 with English subtitles</a>). A következő hasonlóan nagy és előremutató szabványosítási lépés, a hálózati átvitel pedig a <strong>TCP/IP protokoll</strong> megjelenése volt 1975-ben, mely az 1983-as <strong>Berkely sockettel</strong> kiegészülve nyerte el a szabványos, ma is használt formáját, és lett a mai Internet alapja. <a class="reference external" href="https://en.wikipedia.org/wiki/History_of_email">Ezzel nagyjából egyidőben, több lépésben alakult ki</a> az <strong>email (e-mail) szabvány</strong>, mely eleinte a hálózati átvitel fejlődése nélkül csak szűk kör számára volt elérhető, de végül a két szabvány együtt hozta el a forradalmat. És bár mindkét szabvány sok réteggel bővült az idők során, a kezdeti megfontolások változatlanok bennük.</p>
+</section>
+<section id="a-vezerlokarakterek">
+<span id="id3"></span><h2>A vezérlőkarakterek<a class="headerlink" href="#a-vezerlokarakterek" title="Link to this heading"></a></h2>
+<p>A vezérlőkarakterek egy része a mai napig használatban van, míg más részük már csak történelmi örökség. A mai napig használt vezérlőkarakterek a következők:</p>
+<ul class="simple">
+<li><p><strong>Kocsi vissza (Carriage Return, CR)</strong>: térjen vissza a lap bal oldalára.</p></li>
+<li><p><strong>Soremelés (Line Feed, LF)</strong>: lépjen a következő sorba.</p></li>
+<li><p><strong>Tulátor (TAB)</strong>: a behúzást segíti vízszintesen egy változó szélességű szóközzel (a hossza hagyományosan megfelel 4 vagy 8 szóköznek, de a környezet definíciójától függően tetszőlegesen állítható).</p></li>
+<li><p><strong>NULL (NUL)</strong>: eredetileg a lyukkártyákon az üres helyeket jelentette (pl. sor végén), manapság jelzi a memóriában a szöveges tartalom végét az alacsony szintű programozási nyelvekben, bizonyos esetekben határoló karakterként használható.</p></li>
+<li><p><strong>Lapdobás (Form Feed, FF)</strong>: a képernyőt törli (mint a <em>page down</em> billentyű). Gyakorlatilag a „következő, üres oldalra lapozással” kiüríti a tartalmát, mintha üres lap jönne, de az előző lap bármikor visszahozható.</p></li>
+<li><p><strong>Szóköz (Space)</strong>: egy üres helyet hagy ki két karakter között – technikailag nem vezérlőkarakter, hanem <strong>nem megjeleníthető (non-printable)</strong> karakter.</p></li>
+<li><p><strong>Visszalépés (Backspace, BS)</strong>: törli a legutolsó karaktert, és visszalép annak helyére (gyakorlatilag balra ír egy szóközt).</p></li>
+<li><p><strong>Fájlvége (End of File, EOF)</strong>: a fájl vagy a bemenet végét jelző speciális „karakter”, mely soha nem tárolódik, mivel csak egy jelzésre szolgáló minden más bemeneti egységtől megkülönböztethető extremális elem. Hasonlóan a <em>csengő (bell)</em> karakterhez, amely az írógépeken kívül már nem használatos, de kompatibilitás miatt az ASCII része.</p></li>
+<li><p><strong>Escape karakter (ESC)</strong>: egy olyan karakter, amely azt jelzi, hogy az utána következő vezérlőkarakter sima karakterként értelmezendő, vagy fordítva, a sima karakter vezérlőként. Csak logikailag maradt fenn, nem pedig a konkrét használatban: általában a <code class="docutils literal notranslate"><span class="pre">\</span></code> karakterrel lehet „kieszképelni” egy vezérlőkaraktert, a <strong>literális (betű szerinti)</strong> <code class="docutils literal notranslate"><span class="pre">\</span></code> karaktert pedig duplázva (<code class="docutils literal notranslate"><span class="pre">\\</span></code>) lehet megjeleníteni (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#ascii-kararakterhivatkozasok"><span class="std std-ref">ASCII karakterhivatkozások (fehérszóközök)</span></a> rész).</p></li>
+</ul>
+<p>A kocsi vissza és soremelés karakterek az írógépektől származnak, és együttesen végzik el az új sorba lépést. A <em>Windowsban</em> az új sorok kocsi vissza, illetve soremelés vezérlőkarakterekkel vannak jelölve (<code class="docutils literal notranslate"><span class="pre">\r\n</span></code>), viszont <em>Linuxban</em> csak soremelés van (<code class="docutils literal notranslate"><span class="pre">\n</span></code>), a régi <em>Macintosh</em> rendszerekben pedig csak kocsi vissza volt, de már átálltak soremelésre. A nem a vártnak megfelelően jelölt új sorok esetében azt tapasztalhatjuk, hogy a szöveg minden sora egy sorként jelenik meg (Linuxos sorvégek Windowsban, pl. <em>Jegyzetömbben</em> megnyitva), vagy minden sor végén egy extra kocsi vissza jel (<code class="docutils literal notranslate"><span class="pre">\r</span></code>) szerepel (Windowsos sorvégek Linuxban megnyitva tetszőleges szövegszerkesztővel, lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kulonfele-sorvegek"><span class="std std-ref">Különféle sorvégek</span></a> rész).</p>
+</section>
+<section id="a-reprezentacio">
+<span id="id4"></span><h2>A reprezentáció<a class="headerlink" href="#a-reprezentacio" title="Link to this heading"></a></h2>
+<p>Az ASCII történelmileg 7 bittel dolgozik, így összesen 128 karaktert tud eltárolni. A későbbi számítógépekben megjelenő 8. bit használata opcionális (lásd <a class="reference internal" href="unicode_reprezentaciok.html#elet-egy-bajton-tul"><span class="std std-ref">Élet egy bájton túl (a széles karakterek és az UTF-16/32)</span></a> rész). Mivel minden bit vagy 0 vagy 1 lehet, mindegyik két lehetőséget reprezentálhat, ami a hét helyiérték kombinációját tekintve: 2⋅2⋅2⋅2⋅2⋅2⋅2 = 2<sup>7</sup> = 128. Ebből könnyű megjegyezni, hogy a számítógépek bináris rendszerében a kettőt a rendelkezésre álló bitek számának megfelelően hatványra emelve megtudjuk, hogy a bitsorozatunk hány kombinációt képes reprezentálni. Az alábbi táblázatban a hét bit látható: az alsó sor tartalmazza a bitek értékét, ami lehet 0 vagy 1, a felső sor pedig a helyiértéket, amit képviselnek:</p>
+<table class="docutils align-center">
+<tbody>
+<tr class="row-odd"><td><p>helyi érték</p></td>
+<td><p class="centered">
+<strong>64</strong></p></td>
+<td><p class="centered">
+<strong>36</strong></p></td>
+<td><p class="centered">
+<strong>16</strong></p></td>
+<td><p class="centered">
+<strong>8</strong></p></td>
+<td><p class="centered">
+<strong>4</strong></p></td>
+<td><p class="centered">
+<strong>2</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>bit értéke</p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+<td><p class="centered">
+<strong>0</strong></p></td>
+<td><p class="centered">
+<strong>0</strong></p></td>
+<td><p class="centered">
+<strong>0</strong></p></td>
+<td><p class="centered">
+<strong>0</strong></p></td>
+<td><p class="centered">
+<strong>0</strong></p></td>
+<td><p class="centered">
+<strong>1</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>A kódtáblában először a vezérlőkarakterek jönnek, majd matematikai jelek, számok, a nagybetűk és pár központozási jel, végül a kisbetűk. Például a nagy a betű (<code class="docutils literal notranslate"><span class="pre">A</span></code>) esetében – ami a <code class="docutils literal notranslate"><span class="pre">1000001</span></code>-es bináris reprezentációt kapta, vagyis a 64-es és az 1-es helyiértékeken lévő bitek értéke 1, a többi pedig 0 tehát – 64 + 1, a bitek összértéke, ami a decimális számrendszerben jelölve 65.</p>
+</section>
+<section id="a-kis-es-nagybetusites">
+<span id="kis-es-nagybetusites"></span><h2>A kis- és nagybetűsítés<a class="headerlink" href="#a-kis-es-nagybetusites" title="Link to this heading"></a></h2>
+<p>A karakterek elhelyezése nagyon tudatos volt, hogy elősegítse a gyakori műveletek, pl. a kis- és nagybetűsítés gyors elvégzését. Az ASCII-ban a betűk rendre a következőképpen vannak kódolva:</p>
+<table class="docutils align-center">
+<tbody>
+<tr class="row-odd"><td><p class="centered">
+<strong>Betű</strong></p></td>
+<td><p class="centered">
+<strong>Reprezentáció</strong></p><p class="centered">
+<strong>nagy változat</strong></p><p class="centered">
+<strong>(A-Z)</strong></p></td>
+<td><p class="centered">
+<strong>Reprezentáció</strong></p><p class="centered">
+<strong>kis változat</strong></p><p class="centered">
+<strong>(a-z)</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>a</strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1000001</span></code></strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1100001</span></code></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>b</strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1000010</span></code></strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1100010</span></code></strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>c</strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1000011</span></code></strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1100011</span></code></strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>…</strong></p></td>
+<td><p class="centered">
+<strong>…</strong></p></td>
+<td><p class="centered">
+<strong>…</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>z</strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1011010</span></code></strong></p></td>
+<td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">1111010</span></code></strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Így a 7-bites kódolás miatt a 8-bites egységek első bináris számjegyét nem tekintve (a példákban 1-el jelöljük mindenhol), elég volt csak a második bináris számjegyből megállapítani, hogy kis- vagy nagybetűről van-e szó (1 vagy 0 az érték), és aztán az utolsó ötből megállapítani a betűt. Tehát a kis/nagybetűk konverziójához elég volt a második bitet átállítani. Például a nagy z (<code class="docutils literal notranslate"><span class="pre">Z</span></code>) karakter reprezentációjában, ami <code class="docutils literal notranslate"><span class="pre">1X11011</span></code>, az X-et nulláról egyre állítva kisbetűsíthető a karakter.</p>
+<p>A kis a-tól (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">1100000</span></code>) a nagy z-ig (<code class="docutils literal notranslate"><span class="pre">Z</span></code>, <code class="docutils literal notranslate"><span class="pre">1011011</span></code>) az angol ábécé karakterei a rendelkezésre álló 5 bitből (2<sup>5</sup> = 32) csupán 26 kombinációt foglaltak le, ezért a fennmaradó 6 lehetőséget felhasználták olyan speciális karakterek kódolására, mint pl. a zárójelek.  Igyekeztek ezeket is úgy választani, hogy az eltolásuk („shiftelésük”) logikus legyen. Így lettek egymás „nagy és kisbetűs” párjai a nyitó és záró zárójelek szögletes (<code class="docutils literal notranslate"><span class="pre">[</span></code> és <code class="docutils literal notranslate"><span class="pre">]</span></code>) és kapcsos (<code class="docutils literal notranslate"><span class="pre">{</span></code> és <code class="docutils literal notranslate"><span class="pre">}</span></code>) formái: az egyik fajta nyitó vagy záró jelről a másik fajta, de azonosan nyitó vagy záróra változtatható egy bit módosításával.</p>
+<p>Az ASCII tökéletesen megfelel az angol nyelv számára, és a korai elterjedése miatt a legtöbb karakterkódolási rendszernek az ASCII az alapja a mai napig. Viszont elég csak Európára gondolnunk, hogy lássuk a számtalan nyelv sajátosságaiból fakadó problémákat, melyeket az ASCII kialakításakor nem kezeltek.</p>
+</section>
+<section id="ascii-rajzok-ascii-art">
+<span id="ascii-rajzok"></span><h2>ASCII rajzok (ASCII art)<a class="headerlink" href="#ascii-rajzok-ascii-art" title="Link to this heading"></a></h2>
+<p>Az ASCII 128 karakteréből 95 nyomtatható. A kódtáblával egyidőben elindult egy művészeti ág, mely a nyomtatható karakterek segítségével készített számítógépes rajzokat foglalta magába. Ez az ASCII és más későbbi kódtáblák változatos médiumokon (pl. írógép, terminál) való használatának köszönhetően <a class="reference external" href="https://en.wikipedia.org/wiki/ASCII_art">számos formát öltött</a> (pl. statikus, animált). Ennek a művészei formának a mai napig nagy kultusza van. Vannak programok, melyek képesek képeket illetve videókat akár animált <strong>ASCII art</strong> formába alakítani (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#ascii-rajzok-es-videok"><span class="std std-ref">ASCII rajzok és videók</span></a> rész), valamint az így készült rajzoknak <a class="reference external" href="https://www.asciiart.eu/">külön archívuma</a> is van. Érdemes összevetni az emojikkal, melyek később jelentek meg (lásd <a class="reference internal" href="unicode_szemlelete.html#megjelenites-es-komb"><span class="std std-ref">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</span></a>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="karakterkodolas_tortenete.html" class="btn btn-neutral float-left" title="A karakterkódolás története" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="iso8859_csalad.html" class="btn btn-neutral float-right" title="Az ISO 8859 család" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ELTE-DH. Az anyag a Creative Commons, Nevezd meg! - Így add tovább! CC-BY-SA 4.0 Nemzetközi Licenc feltételeinek megfelelően, permalinkes (kattintható és az adott cikkre mutató) forrásmegjelöléssel szabadon felhasználható.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

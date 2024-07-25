@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nemzetköziesítés hackeléssel &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A Unicode szemlélete" href="unicode_szemlelete.html" />
+    <link rel="prev" title="Az ISO 8859 család" href="iso8859_csalad.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Digitális bölcsészet alapok
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="karakterkodolas_index.html">Karakterkódolás</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bevezetes.html">Bevezetés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html">Absztrakciós szintek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html">A karakterkódolás története</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html">ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iso8859_csalad.html">Az ISO 8859 család</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Nemzetköziesítés hackeléssel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#binaris-formatumok">Bináris formátumok</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#karakterhivatkozasok-entitasok">Karakterhivatkozások (entitások)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repulo-ekezetek-es-proszeky-kod">Repülő ékezetek és Prószéky-kód</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html">A Unicode szemlélete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html">A Unicode reprezentációk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html">Karakterkódolás a gyakorlatban</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../impresszum.html">Impresszum</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digitális bölcsészet alapok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="karakterkodolas_index.html">Karakterkódolás</a></li>
+      <li class="breadcrumb-item active">Nemzetköziesítés hackeléssel</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/karakterkodolas/nemzetkoziesites_hackelessel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nemzetkoziesites-hackelessel">
+<span id="id1"></span><h1>Nemzetköziesítés hackeléssel<a class="headerlink" href="#nemzetkoziesites-hackelessel" title="Link to this heading"></a></h1>
+<p>Az Internet széles körű elterjedésével a 90-es években szükségessé vált, hogy egy dokumentumon belül különféle nyelvek is meg tudjanak jelenni a maguk speciális karaktereivel, függetlenül attól, hogy egy kódtáblán szerepelnek-e a karakterei. Egyre inkább szükség lett volna egy egységes kódrendszerre, mely egyszerre is képes kezelni <em>minden nyelv</em> betűit. A Latin kódolás ebből a szempontból több mint elégtelennek bizonyult, mivel például a mandarin nyelvben több tízezer karakter van, melyek megkülönböztetéséhez több bájtnyi tárhelyre lett volna szükség, akárhogyan is vannak reprezentálva a karakterek. Ekkor az egész világ már tényleg az egész világot jelentette, nem csak a latin betűs írásokat és pár kivételes nyelvet.</p>
+<p>Az Internet elődjének (<em>ARPANET</em>) publikus megjelenésével (1983) egyértelművé vált, hogy a nyomtatásból ismert formázással kapcsolatos fogalmaink (lásd leíró nyelvek, pl. <em>(La)TeX</em> (1978), <em>SGML</em> (1988)) és az átvitellel kapcsolatos problémák (lásd az 1983-as <em>Berkeley Socket</em>, amely a mai Internet alapja) végleg kikerülnek a karakterkódolás témaköréből. Addigra az ASCII szabvány akkora teret nyert, hogy a fejlődés előfutárából a fejlődés gátja lett, hiszen költséges lett volna olyan rendszereket bevezetni, melyek nem „szabványosak”. Így az új, az elvárásokat teljesítő szabvány megjelenéséig és elterjedéséig különféle kerülőutakra és ügyes szükségmegoldásokra, más néven hekkekre volt szükség.</p>
+<section id="binaris-formatumok">
+<span id="id2"></span><h2>Bináris formátumok<a class="headerlink" href="#binaris-formatumok" title="Link to this heading"></a></h2>
+<p>Az elődrendszerek (lásd <a class="reference internal" href="karakterkodolas_tortenete.html#karakterkodolas-tortenete"><span class="std std-ref">A karakterkódolás története</span></a> rész) felépítése miatt kezdetben csak az ASCII kódolású (7 bites), kizárólag nyomtatható karaktereket tartalmazó szöveges formátumok voltak átvihetőek a hálózaton. Ezért maguk a kezdeti protokollok is angol nyelvű szöveges parancsokra alapultak (pl. <a class="reference external" href="https://en.wikipedia.org/wiki/File_Transfer_Protocol">a fájlátviteli protokoll (FTP, 1971)</a> és az internetes levelezést lehetővé tevő <a class="reference external" href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">SMTP (1980)</a>). Viszont amikor már képeket, nem szöveges jellegű adatokat és a helyspórolás végett tömörített adatokat is továbbítani akartak ezeken a protokollokon „szöveges adattá” kellett kódolni azokat (<a class="reference external" href="https://en.wikipedia.org/wiki/Binary-to-text_encoding">binary-to-text encoding</a>), hogy ne tudjanak zavart okozni az átvitel során. Ennek nyomán megjelent a mind a 8 bitet tetszőlegesen kihasználó, bináris adatok a csak 7 bitet kezelő, szöveges (azaz nyomtatható ASCII karakterekből álló) adatfolyamba való beágyazásának igénye. Ha pedig tetszőleges tartalmú, akár bináris (mind a 8 bitet kihasználó) adat reprezentálható az átvitel során 7-bites nyomtatható karakterekkel a tartalomra vonatkozó további megkötés nélkül, az lehetővé teszi, hogy különféle tisztán bináris (8 bites) formátumok alakuljanak ki kilépve a beágyazottságból. Csak a jól szabályozott részeket kel hozzá lassanként opcionálissá tenni, majd elhagyni.</p>
+<p>Ez a lehetőség vezetett többek között a nemzetközi karakterek és formázások ilyen jellegű tárolásához. Például egy 2003 előtti <em>MS Word .DOC</em> (nem docx) formátumú dokumentumot szövegszerkesztővel (pl. <em>Jegyzettömb</em>) megnyitva csak értelmezhetetlen adathalmazt látunk (<a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Word#Binary_formats_(Word_97%E2%80%932007)">valójában egy fájlrendszert láthatunk egy fájlban kódolva, csak nem nyilvános/szabványos szabályok szerint</a>). Az ilyen, főként bináris formátumok értelmezése, manipulálása csak a felépítésük ismeretében lehetséges. Ez a melegágya a zárt szabványoknak, melyek dekódolása nagyon nehéz, és gátolja az interoperabilitást, alternatív programok fejlesztését. Ezzel szemben a modern formátumok, például a <a class="reference external" href="https://en.wikipedia.org/wiki/Office_Open_XML">Office Open XML (docx)</a> valójában zip fájlok és szabványosan tömörített formában tartalmazzák a tárolt fájlokat, szabványos felépítésű XML-eket. Ezért kitömörítés után bármilyen szövegszerkesztőben megnyithatóak és szerkeszthetőek, visszatömörítéssel pedig az eredeti formátumba „menthető” a módosítás.</p>
+<p>Az (akár bináris, akár szöveges) adatok „szöveges” formátumokba ágyazásának nehézsége abból adódik, hogy a beágyazandó adat tartalma a bitek értékének és sorrendjének tekintetében tetszőleges lehet, viszont a beágyazás után csak közönséges, nyomtatható karakterekkel lehet reprezentálni. Erre a problémára találták ki a <strong>Base64 formátumot</strong>, mely az akár bináris bemeneti adatot 3 darab 8 bites bájtonként (24 bit) veszi, és átalakítja 6 bites egységek négyes csoportjaira úgy, hogy a kimenet minden bájtja egy nyomtatható karakter (nagybetűk, kisbetűk, számok, valamint a <code class="docutils literal notranslate"><span class="pre">+</span></code> és <code class="docutils literal notranslate"><span class="pre">/</span></code> jelek, összesen 64 darab elem). Abban az esetben, amikor a bemenet hossza nem osztható 3 bájtos egységekre, a kimeneten extra karakterekkel jelzi a rendszer, hogy nincsenek további bitek az utolsó három bájtos kimeneti elemben. Ezek az extra karakterek lehetnek <code class="docutils literal notranslate"><span class="pre">A</span></code>-betűk, melyek nulla értéket reprezentálnak, vagy szükség esetén egy vagy két <code class="docutils literal notranslate"><span class="pre">=</span></code> jel, <strong>melyekről könnyen felismerhető, hogy Base64 kódolással van dolgunk</strong> (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-base64-kodolas"><span class="std std-ref">A Base64 kódolás</span></a> rész). <a class="reference external" href="https://www.base64decode.org/">A szisztéma ezen az oldalon kipróbálható.</a></p>
+<p>Egy másik hasonló formátum az úgynevezett <a class="reference external" href="https://en.wikipedia.org/wiki/Quoted-printable">Quoted-Printable</a> kódolás, melynek célja a Base64-el ellentétben, hogy megtartsa az emberi olvashatóságot, amennyire lehet és csak a nem nyomtatható ASCII karaktereket kódolja. Főleg az emailek törzsében a szöveges adatok kódolására használatos. Minden tisztán 8 bites bájt három karakterrel kódolható: az első karakter az egyenlőségjel (<code class="docutils literal notranslate"><span class="pre">=</span></code>) melyet két karakterben a bájt hexadecimális (16-os számrendszer szerinti) értéke követ (bővebben lásd <a class="reference internal" href="#karakterhivatkozasok"><span class="std std-ref">Karakterhivatkozások (entitások)</span></a> rész). Ez szükségessé teszi a szövegben amúgy előforduló egyenlőségjelek kódolását minden esetben, hogy ne legyen összetéveszthető a kódolt bájtok első karakterével. A 75 karakternél hosszabb sorokat puha sortörésekkel (egyenlőségjel) el kell törni, hogy a képződő sorok maximum 64 karakter szélesek legyenek a régi szabványnak megfelelően. A sor végi fehér szóközök is kódolandóak, ahogy a szövegbeli valódi sortörések is, melyek kicsi vissza és soremelés párokká alakítandóak az eredeti értéktől függetlenül (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-quoted-printable-kodolas"><span class="std std-ref">A Quoted-Printable kódolás</span></a> rész). <a class="reference external" href="https://dencode.com/string/quoted-printable">A kódolás ezen az oldalon kipróbálható.</a></p>
+<p>Ezekben a formátumokban tetszőleges bemenet kiszámítható formátumúra alakítható az átvitelhez, és az értelmező programra van bízva a tartalom kezelése. Még manapság is használatos, pl. az e-mailbe beágyazott nem ASCII karakterek és a képek így kerülnek továbbításra. Szerencsére manapság elég csak felismerni őket, vannak beépített függvények a kódolásra és dekódolásra (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#karakterkodolas-a-gyakorlatban"><span class="std std-ref">Karakterkódolás a gyakorlatban</span></a> rész). Kezdetben a világhálón található képek ilyen formátumban voltak beágyazva a szöveg közé, hogy a teljes tartalom egy dokumentumon belül maradjon. Manapság már ez egyre ritkább az arculati elemek több helyen történő felhasználása miatt, ezért külön fájlokként hivatkoznak rájuk az internetes dokumentumokban. Habár a Base64 és a Quoted-Printable formátumok megoldották az adattovábbítás kérdését, nem szabványosították az adat értelmezésének módját, így az ASCII karaktertáblában nem szereplő karakterek szabványos jelölésére más megoldás kellett.</p>
+</section>
+<section id="karakterhivatkozasok-entitasok">
+<span id="karakterhivatkozasok"></span><h2>Karakterhivatkozások (entitások)<a class="headerlink" href="#karakterhivatkozasok-entitasok" title="Link to this heading"></a></h2>
+<p>Az <em>SGML</em> (1988), <em>HTML</em> (1993) és <em>XML</em> (1998) jelölőnyelvű dokumentumok nyomtatható ASCII karakterek sorozataiból állnak. Mind a szöveges adatokat, mind a formázást, metaadatokat stb. jelölő címkéket, s azok rekurzívan építkező struktúráit ugyanúgy karakterekkel reprezentálják szemben a bináris formátumokkal (pl. doc, xls vö. docx és xlsx, ahol speciális XML fájlok zipbe vannak tömörítve), így lehetővé teszik az automatikus és manuális kezelést is. A tervezésükből fakadóan a címkéken belül találhatóak még attribútum-érték párok is, melyeket szintén számításba kell venni a nyomtatható ASCII karakterekkel való reprezentálhatóságkor.</p>
+<p>A jelölőnyelv szempontjából a szintaktikai értelemmel bíró karakterek (pl. a címkéket jelző relációs jelek, idézőjelek stb.) szövegbeli, azaz nem szintaktikai értelemben történő megjelenítése nem egyértelmű külön jelölés nélkül. Szövegbeli reprezentálhatóságukhoz úgynevezett <strong>karakterhivatkozásoknak (character entity reference) nevezett karaktersorozatokat</strong> vezettek be.</p>
+<p>Amit beírunk egy XML dokumentumba:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;címke&gt;Ez a címke tag szöveges tartalma: &amp;lt;p&amp;gt;Ez a &amp;quot;szöveg&amp;quot; így néz ki&amp;lt;/p&amp;gt;&lt;/címke&gt;
+</pre></div>
+</div>
+<p>Ahogy megjelenik a <code class="docutils literal notranslate"><span class="pre">&lt;címke&gt;</span></code> címke tartalma (szintaktikai értelemmel nem bíró szöveg):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ez a címke tag szöveges tartalma: &lt;p&gt;Ez a &quot;szöveg&quot; így néz ki&lt;/p&gt;
+</pre></div>
+</div>
+<p>Általánosságban a hivatkozások láthatatlan karakterek láthatóvá tételére (szóköz, soremelés, tabulátor stb.) és az adott környezetben a szöveg számítógépes jelölése szempontjából szintaktikai értelemmel bíró karakterek (például a string határoló idézőjel) <strong>literális</strong>, azaz önmagát jelentő változatainak a jelölésére szolgálnak.</p>
+<p>Amit beírunk, pl. egy string változóba:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;Soremelés: \n Egy fordított törtvonal: \\ Tab: \t az idézőjel befejezi a stringet, de \&quot; formában leírható literális alakban is.&quot;
+</pre></div>
+</div>
+<p>Ahogy megjelenik, ha kiíratjuk a változó tartalmát:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Soremelés:
+Egy fordított törtvonal \ Tab:      az idézőjel befejezi a stringet, de &quot; formában leírható literális alakban is.
+</pre></div>
+</div>
+<p>A HTML-nyelven belül és az URL-eknél a szintaktikai funkcióval rendelkező karakterek literális alakjának leírásához szükséges karakterhivatkozásokat előállító műveletet <strong>escape-nek</strong>, a karakterhivatkozásokat literális alakká visszaalakító műveletet <strong>unescape-nek</strong> hívjuk, általánosságban ezek a műveletek <strong>qoute-nak</strong> és <strong>unqoute-nak</strong> is hívhatóak (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kodtablafuggetlen-karakterhivatkozasok"><span class="std std-ref">Kódtáblafüggetlen karakterhivatkozások előállítása és feloldása</span></a> rész).</p>
+<p>A karakterhivatkozásokkal történő leírás lehetővé teszi, hogy a különböző Latin kódtáblák karakterei (pl. a hullámos ő <code class="docutils literal notranslate"><span class="pre">õ</span></code> a Latin-1-ből és a magyar hosszú ő <code class="docutils literal notranslate"><span class="pre">ő</span></code> a Latin-2-ből) egy dokumentumon belül is szerepelhetnek – az ilyen hivatkozások felépítésükben a kombinálódó (pl. repülő) ékezetekre (lásd <a class="reference internal" href="#repulo-ekezetek-es-proszeky-kod"><span class="std std-ref">Repülő ékezetek és Prószéky-kód</span></a> rész) hasonlítanak. A hivatkozott karakterek értelmezése a megjelenítő programokra (többnyire a böngészőre) van hagyva. A programok többségében a hivatkozások megjelenésekor már un. <strong>8-bit tiszta</strong> (8 bites egységekben történő) feldolgozás történik, amiben egy karakter egy bájtnak van tekintve a bitek értékétől függetlenül. Ilyenkor a karakterek például csak másolva vagy generálva vannak nagyobb csoportokban és nem külön-külön értelmezve, ezért ez az eljárás nem okoz hibát. Ez az elv jelenik meg az UTF-8 tervezésekor is. Lásd <a class="reference internal" href="unicode_reprezentaciok.html#utf8"><span class="std std-ref">UTF-8, a több bájtos, nem fix szélességű karakterkódolás</span></a> rész.</p>
+<p>Amit beírunk egy XML dokumentumba:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;címke&gt;literális és / ampersand jel: &amp;amp; egy Latin-1-es hullámos o betű &amp;otilde; és egy Latin-2-es magyar két vesszős o &amp;odblac; egy fájlban leírva.&lt;/címke&gt;
+</pre></div>
+</div>
+<p>Ahogy megjelenik a <code class="docutils literal notranslate"><span class="pre">&lt;címke&gt;</span></code> címke tartalma (szintaktikai értelemmel nem bíró szöveg):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>literális és / ampersand jel: &amp; egy Latin-1-es hullámos o betű õ és egy Latin-2-es magyar két vesszős o ő egy fájlban leírva.
+</pre></div>
+</div>
+<p>A karakterhivatkozások kitalálása után sokáig megszokott volt a régi programokkal való kompatibilitás: a különféle számítógépes architektúrák, mint a <strong>big endian</strong> és a <strong>little endian</strong> közötti átvihetőség (lásd <a class="reference internal" href="unicode_reprezentaciok.html#bitek-sorrendje-a-szeles-karakterben"><span class="std std-ref">A bitek sorrendje a széles karakterekben (big endian, little endian és a byte order mark)</span></a> rész) jegyében a speciális karaktereknek (a Latin kódtáblák, UTF-8 stb. elemei) az ASCII által kínált készlettel kompatibilis módon való, hivatkozással történő leírása. Hátrányként említhető, hogy így az absztrakciós szintek összekeverednek, mivel egy karakter valójában több karakterrel íródik le, ami megnehezíti például a reguláris kifejezések írását (pl. negáció), és biztonsági hibákat is eredményezhet (pl. <a class="reference external" href="https://en.wikipedia.org/wiki/Double_encoding">„double encoding” támadások</a>) a korlátos karakterkészlet adta hamis biztonságérzet miatt.</p>
+<p>Manapság minden program kompatibilis az UTF-8 szabvánnyal, és a fenti leíró nyelvekben kódolt szövegekben majdnem minden literális alakban szerepel, és csak minimális számú hivatkozás van használatban – ezek a „kisebb” (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>), „nagyobb” (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), az „és” (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) és az „idézőjel” (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) karakterek. Ezeknek a hivatkozásoknak két típusa van: a <strong>numerikus karakterhivatkozás (numeric character reference)</strong> és a <strong>karakteregység hivatkozás (character entity reference)</strong>, melyekre elég úgy utalnunk, hogy <strong>HTML-entitás</strong>. Ez egy olyan karakterlánc, amely egy „és” jellel / „ampersanddal” (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) kezdődik és egy pontosvesszővel (<code class="docutils literal notranslate"><span class="pre">;</span></code>) végződik.</p>
+<p>Például:</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Numerikus hivatkozás</p></th>
+<th class="head"><p>Karakteregység hivatkozás</p></th>
+<th class="head"><p>Karakter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&amp;#60;</p></td>
+<td><p>&amp;gt;</p></td>
+<td><p>&lt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>&amp;#62;</p></td>
+<td><p>&amp;lt;</p></td>
+<td><p>&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>&amp;#38;</p></td>
+<td><p>&amp;amp;</p></td>
+<td><p>&amp;</p></td>
+</tr>
+<tr class="row-odd"><td><p>&amp;#34;</p></td>
+<td><p>&amp;quot;</p></td>
+<td><p>“</p></td>
+</tr>
+</tbody>
+</table>
+<p>A később létrejött Unicode kódtábla karaktereinek hivatkozásaiban – a karakterek számának drasztikus növekedésére reagálva – a numerikus hivatkozások váltak elterjedtebbé. A numerikus karakterhivatkozásokban a számok a kódpontokra utalnak. Például a <code class="docutils literal notranslate"><span class="pre">&amp;#123</span></code> és <code class="docutils literal notranslate"><span class="pre">&amp;#x7B</span></code> karakterhivatkozások esetében az első a <strong>decimális</strong> (10-es számrendszer szerinti), a második a <strong>hexadecimális</strong> (16-os számrendszer szerinti) forma. A 16-os számrendszerben a 0-9 számok mellett az A, B, C, D, E és F betűk is használatosak a 10-15-ös érték egy helyiértéken történő jelöléséhez. A hexadecimális formát az x-szel való prefixálás jelzi. A karakterkészletek közötti konverzió nem változtat ezeken a hivatkozásokon, de ezeket is el lehet rontani karakterkonverzió során (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kodolasi-hibak-furcsasagok"><span class="std std-ref">Kódolási hibák, furcsaságok</span></a> rész).</p>
+<p>Bár a böngészők igyekeznek a felhasználó elől jótékonyan elrejteni, kétféle karakterhivatkozást is alkalmaznak az URL-eken belül: (a) az elérési útban található ékezetes betűk jelölésére használatos, százalék jelekkel prefixált hexadecimális számokkal való kódolás (<strong>URL encode</strong> és <strong>URL decode</strong>) és (b) az ékezetes doménnevek kódolásakor az úgynevezett <a class="reference external" href="https://en.wikipedia.org/wiki/Punycode">„Punycode”</a>, mely az <code class="docutils literal notranslate"><span class="pre">„xn--”</span></code> előtagról ismerhető fel (<strong>Punycode encode</strong> és <strong>Punycode decode</strong>). Valamint az Unicode karaktereknek vannak további hivatkozásai is, melyek szintén az ASCII kompatibilitást szolgálják (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#ascii-kararakterhivatkozasok"><span class="std std-ref">ASCII karakterhivatkozások (fehérszóközök)</span></a> rész). Az alábbi táblázat példákon keresztül mutatja be a böngészőben használható karakterhivatkozásokat (a böngésző címsorába illesztve tesztelhető a visszaalakításuk):</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p class="centered">
+<strong>A Wikipedia Árvíztűrőtükörfúrógép cikke, UTF-8 kódolásban <em>URL encode-olva</em></strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">https://hu.wikipedia.org/wiki/%C3%81rv%C3%ADzt%C5%B1r%C5%91_t%C3%BCk%C3%B6rf%C3%BAr%C3%B3g%C3%A9p</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>A <code class="docutils literal notranslate"><span class="pre">https://www.árvíztűrőtükörfúrógép.hu</span></code> domén <em>Punycodeban</em></strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong><code class="docutils literal notranslate"><span class="pre">https://www.xn--rvztrtkrfrgp-bbb7j2b8f0b9d7a21oft.hu</span></code></strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Ahogy a bináris formátumoknál (lásd <a class="reference internal" href="#binaris-formatumok"><span class="std std-ref">Bináris formátumok</span></a> rész), itt is az a fontos, hogy felismerjük a kódolást, mivel a beépített kódoló és dekódoló függvények segítségével könnyen kezelhetőek. Amennyiben hiba van, az valószínűleg a függvények egymás utáni helytelen sorrendben való alkalmazásából adódik, általában hasonló módon visszaalakítható az eredeti állapot (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#karakterkodolas-a-gyakorlatban"><span class="std std-ref">Karakterkódolás a gyakorlatban</span></a> rész).</p>
+</section>
+<section id="repulo-ekezetek-es-proszeky-kod">
+<span id="id3"></span><h2>Repülő ékezetek és Prószéky-kód<a class="headerlink" href="#repulo-ekezetek-es-proszeky-kod" title="Link to this heading"></a></h2>
+<p>Egy másik (az írógépektől átvett) megközelítés a különféle ékezetes karakterek előállítására más nyelvű vagy korlátozott billentyűzeten, hogy külön visszük be az ékezetet az alapbetűtől. Az úgynevezett <strong>halott billentyű (dead key)</strong> egy olyan mechanizmus, melyet a <strong>compose key</strong> lenyomásával hívunk elő, s melynek használatával létre tudjuk hozni azokat az ékezetes betűket, amelyek egyébként nem találhatóak meg a billentyűzeten külön billentyűn. Eredetileg az írógép a halott billentyű lenyomásakor a kocsi előremozdítása nélkül ugyanarra a karakterhelyre üti az ékezetet az újabb billentyű lenyomásával, és csak ezután mozdítja előre a kocsit.</p>
+<p>A számítógépen az <strong>AltGr</strong> (compose key) lenyomásával együtt azt a billentyűt kell lenyomni a betűk feletti számbillentyűk sorából, amely a jobb alsó sarkában tartalmazza azt az ékezetet, melyet kombinálni akarunk az alapkarakterrel. A compose key lenyomásának következtében nem jelenik meg a beírt karakter, hanem az ezzel egyidőben, valamint ezután lenyomott karakterek kombinálódnak. Amennyiben például az <code class="docutils literal notranslate"><span class="pre">ă</span></code> betűt akarjuk leírni (magyar billentyűzetkiosztásban), azt a halott billentyű mechanizmus segítségével a következőképpen tehetjük meg:</p>
+<ol class="arabic simple">
+<li><p>Lenyomjuk az AltGr billentyűt (compose key).</p></li>
+<li><p>Ezzel egyidőben pedig a 4-es billentyűt a betűk feletti számbillentyűk sorából, mivel a 4-es billentyű jobb alsó sarkában található a <code class="docutils literal notranslate"><span class="pre">˘</span></code>, azaz a <strong>căciulă</strong> nevű ékezet.</p></li>
+<li><p>Fölengedjük ezeket.</p></li>
+<li><p>Végül pedig megnyomjuk az <code class="docutils literal notranslate"><span class="pre">a</span></code> billentyűt.</p></li>
+</ol>
+<p>Így a két karakter egy karakter helyén jelenik meg, ugyanakkor az így létrehozott karakterek nem kompatibilisak az ASCII-val (lásd <a class="reference internal" href="unicode_szemlelete.html#normalizacio-es-spam-szures"><span class="std std-ref">Normalizáció és SPAM szűrés</span></a> rész). Az ilyen karakterek ASCII-val kompatibilis jelölésére – azzal a megszorítással, hogy elég az ember számára érthetőnek maradni, hiszen nem mindig definiált <em>escape mechanizmus</em> (pl. a távirati stílusban a „kiissza” szó mechanikusan dekódolva helytelenül „kíssza” lesz) – az a megoldás, hogy külön jelöljük az ékezeteket a hozzájuk tartozó alapbetűtől, melyre az alábbi formák adottak (csak a kisbetűs formákat soroljuk fel, nagybetűk esetén csak az alapbetű cserélendő):</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="3"><p class="centered">
+<strong>Repülő ékezetek</strong></p></th>
+<th class="head"><p>(La)TeX</p></th>
+<th class="head"><p>Távirati stílus</p></th>
+<th class="head"><p>Prószéky-kód</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>á</p></td>
+<td><p>a’</p></td>
+<td><p>‘a</p></td>
+<td><p>\’a</p></td>
+<td><p>\’{a}</p></td>
+<td><p>aa</p></td>
+<td><p>a1</p></td>
+</tr>
+<tr class="row-odd"><td><p>é</p></td>
+<td><p>e’</p></td>
+<td><p>‘e</p></td>
+<td><p>\’e</p></td>
+<td><p>\’{e}</p></td>
+<td><p>ee</p></td>
+<td><p>e1</p></td>
+</tr>
+<tr class="row-even"><td><p>í</p></td>
+<td><p>i’</p></td>
+<td><p>‘i</p></td>
+<td><p>\’i</p></td>
+<td><p>\’{i}</p></td>
+<td><p>ii</p></td>
+<td><p>i1</p></td>
+</tr>
+<tr class="row-odd"><td><p>ó</p></td>
+<td><p>o’</p></td>
+<td><p>‘o</p></td>
+<td><p>\’o</p></td>
+<td><p>\’{o}</p></td>
+<td><p>oo</p></td>
+<td><p>o1</p></td>
+</tr>
+<tr class="row-even"><td><p>ö</p></td>
+<td><p>o:</p></td>
+<td><p>:o</p></td>
+<td><p>\:o</p></td>
+<td><p>\”{o}</p></td>
+<td><p>oe</p></td>
+<td><p>o2</p></td>
+</tr>
+<tr class="row-odd"><td><p>ő</p></td>
+<td><p>o”</p></td>
+<td><p>“o</p></td>
+<td><p>\”o</p></td>
+<td><p>\H{o}</p></td>
+<td><p>ooe</p></td>
+<td><p>o3</p></td>
+</tr>
+<tr class="row-even"><td><p>ü</p></td>
+<td><p>u:</p></td>
+<td><p>:u</p></td>
+<td><p>\:u</p></td>
+<td><p>\”{u}</p></td>
+<td><p>ue</p></td>
+<td><p>u2</p></td>
+</tr>
+<tr class="row-odd"><td><p>ű</p></td>
+<td><p>u”</p></td>
+<td><p>“u</p></td>
+<td><p>\”u</p></td>
+<td><p>\H{u}</p></td>
+<td><p>uue</p></td>
+<td><p>u3</p></td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>repülő ékezeteknél</strong> az alapbetű előtt vagy után jelenik meg az ékezet, és a konvenciótól függően kell az ilyen ékezeteket <code class="docutils literal notranslate"><span class="pre">\</span></code> karakterrel kieszképelni. A <strong>(La)TeX formalizmusban</strong> kicsit eltérő a formátum, például a hosszú <code class="docutils literal notranslate"><span class="pre">ő</span></code> karakternél a <code class="docutils literal notranslate"><span class="pre">H</span></code> a <em>Hungarian-re</em> utal. A <strong>távirati stílusban</strong> a hosszú magánhangzók dupla rövid magánhangzókkal helyettesítendők, illetve az <code class="docutils literal notranslate"><span class="pre">ő</span></code> és <code class="docutils literal notranslate"><span class="pre">ű</span></code> esetén egy extra <code class="docutils literal notranslate"><span class="pre">e</span></code> betűt kapnak, hogy megkülönböztethetőek legyenek az <code class="docutils literal notranslate"><span class="pre">ó</span></code> és <code class="docutils literal notranslate"><span class="pre">ú</span></code> betűktől. Létezik továbbá a <strong>Prószéky-kód</strong>, ahol <a class="reference external" href="http://nyelvor.c3.hu/special/prokod.pdf">az egyes ékezettípusok meg vannak számozva, és az alapbetű után kerülnek</a>. Ezek a megoldások manapság igen ritkán használatosak, többnyire korlátozott környezetben (Morse-kód, rádiózás), de a régi szövegek tartalmazhatnak hasonló megoldásokat.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="iso8859_csalad.html" class="btn btn-neutral float-left" title="Az ISO 8859 család" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="unicode_szemlelete.html" class="btn btn-neutral float-right" title="A Unicode szemlélete" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ELTE-DH. Az anyag a Creative Commons, Nevezd meg! - Így add tovább! CC-BY-SA 4.0 Nemzetközi Licenc feltételeinek megfelelően, permalinkes (kattintható és az adott cikkre mutató) forrásmegjelöléssel szabadon felhasználható.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

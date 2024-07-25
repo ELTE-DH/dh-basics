@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Absztrakciós szintek &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A karakterkódolás története" href="karakterkodolas_tortenete.html" />
+    <link rel="prev" title="Bevezetés" href="bevezetes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Digitális bölcsészet alapok
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="karakterkodolas_index.html">Karakterkódolás</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bevezetes.html">Bevezetés</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Absztrakciós szintek</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#billentyukodok">Billentyűkódok</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#karakterek-es-nyelvek-lokalizacio-absztrakt-modon">Karakterek és nyelvek (lokalizáció absztrakt módon)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#glifak">Glifák</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#betutipusok">Betűtípusok</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html">A karakterkódolás története</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html">ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iso8859_csalad.html">Az ISO 8859 család</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html">Nemzetköziesítés hackeléssel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html">A Unicode szemlélete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html">A Unicode reprezentációk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html">Karakterkódolás a gyakorlatban</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../impresszum.html">Impresszum</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digitális bölcsészet alapok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="karakterkodolas_index.html">Karakterkódolás</a></li>
+      <li class="breadcrumb-item active">Absztrakciós szintek</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/karakterkodolas/absztrakcios_szintek.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="absztrakcios-szintek">
+<span id="id1"></span><h1>Absztrakciós szintek<a class="headerlink" href="#absztrakcios-szintek" title="Link to this heading"></a></h1>
+<p>A számítógépes szövegek kezelésének rendszerébe való betekintéshez ismerni kell azok elektronikus reprezentációit, a reprezentációk történelmi előzményeit, működését és az azt övező legfőbb problémákat. Fontos meghatározni, hogy mi számít egy karakternek a számítástechnikában, és mi a különbség egy karakter „beviteli”, „logikai” és „megjelenített” formája közt.</p>
+<p>A szövegek formázásáról a <strong>Markdown/LaTeX</strong> fejezetben lesz szó. A szövegfájlok fájlrendszerben való tárolását és metaadatolását a <strong>Linux</strong> fejezetben, míg  a szövegek gépek közötti átvitelét és a programok forrásfájljainak, programozás közbeni használatának részleteit a <strong>Python</strong> fejezetben tárgyaljuk részletesebben.</p>
+<p>Túlhaladott és tisztán technikai problémának tűnhet, de a karakterkódolások, amikkel napjainkban találkozhatunk, folyamatos fejlődésben, átalakulásban vannak. Ha elég régen archivált vagy megfelelően régi digitális szövegekkel, illetve különböző időben fejlesztett programokkal dolgozunk, akkor számos anomáliával találjuk szemben magunkat, amelyek feloldásához érteni kell a karakterkódolások működését akár visszamenőleg is. A karakterkódolás így a digitális szövegek alapköveként határozza meg minden digitalizált szövegfeldolgozással foglalkozó tudomány (nyelvészet, történettudomány stb.) összes forrásanyagát, ennélfogva bárkinek, aki a digitális bölcsészettel akar foglalkozni, ismernie kell annak alapjait.</p>
+<section id="billentyukodok">
+<span id="id2"></span><h2>Billentyűkódok<a class="headerlink" href="#billentyukodok" title="Link to this heading"></a></h2>
+<p>Az elsődleges beviteli periféria a számítógépen a billentyűzet. Eredetileg az amerikai angol nyelvre lett kifejlesztve, és az írógépek kiosztásának hagyományát követi (lásd <a class="reference internal" href="karakterkodolas_tortenete.html#bevitel-gyorsitasa"><span class="std std-ref">A bevitel gyorsítása írógéppel</span></a> rész). A billentyűk leütésekor <strong>billentyűkódok</strong> keletkeznek (akár több is egyszerre, ami lehetővé teszi a billentyűk kombinálását, pl. <em>shift</em> billentyű + betű gombok → nagybetűk), melyek a billentyűzet kiosztásától függően karakterekké alakítódnak át. Ez lehetővé teszi, hogy egy adott fizikai billentyűzet „nyelve” dinamikusan állítható legyen, azaz a leütött billentyűk más karaktereket eredményezzenek, vagy akár <a class="reference external" href="https://www.onlinepianist.com/virtual-piano">zongorabillentyűként is lehessen használni az egyes billentyűket hangok kódolására</a>.</p>
+<p>A legelterjedtebb <a class="reference external" href="https://en.wikipedia.org/wiki/Keyboard_layout">billentyűzetkiosztás</a> az <strong>ANSI (ANSI-INCITS 154-1988)</strong> másnéven <strong>QUERTY</strong> vagy <strong>US English</strong>. Fő ismérve, hogy az <code class="docutils literal notranslate"><span class="pre">z</span></code> és <code class="docutils literal notranslate"><span class="pre">y</span></code> betűk fordítva vannak a magyar kiosztáshoz képest (ami <em>QUERTZ</em> néven is ismert), Ezen kívül fontos különbségek a következők:</p>
+<ul class="simple">
+<li><p><strong>Nem tartalmaz dedikált fizikai billentyűt a magyar hosszú i (</strong> <code class="docutils literal notranslate"><span class="pre">í</span></code> <strong>) betűnek</strong>, de a billentyű kódja előállítható a <a class="reference external" href="https://hu.wikipedia.org/wiki/AltGr">„jobb oldali”</a> <code class="docutils literal notranslate"><span class="pre">Alt</span></code> (<code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">Gr</span></code>) <a class="reference external" href="https://hu.wikipedia.org/wiki/AltGr">billentyű</a> és <code class="docutils literal notranslate"><span class="pre">j</span></code> billentyű együttes lenyomásával. Nyomtatott nagy változatban (<code class="docutils literal notranslate"><span class="pre">Í</span></code>) pedig a <code class="docutils literal notranslate"><span class="pre">j</span></code> helyet az <code class="docutils literal notranslate"><span class="pre">i</span></code> billentyűt nyomva (<code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">Gr</span></code> + <code class="docutils literal notranslate"><span class="pre">i</span></code>) „írható be”.</p></li>
+<li><p>A magyar billentyűzeten a fölül egy sorban elhelyezkedő a számok a balról az első billentyűvel kezdődnek <code class="docutils literal notranslate"><span class="pre">0</span></code>-val és a <code class="docutils literal notranslate"><span class="pre">9</span></code> az utolsó, mielőtt a <code class="docutils literal notranslate"><span class="pre">ö</span></code> billentyű jön. Ezzel szemben a QUERTY változatban a második billentyűvel <code class="docutils literal notranslate"><span class="pre">1</span></code>-el kezdődik a számozás és a <code class="docutils literal notranslate"><span class="pre">9</span></code> után a magyar <code class="docutils literal notranslate"><span class="pre">ő</span></code> helyén van a <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>A nem alfanumerikus (betű és szám) karakterek beírásához más billentyűkombinációkat kell lenyomni, mint megszokhattunk.</p></li>
+</ul>
+<p>Míg a <code class="docutils literal notranslate"><span class="pre">0</span></code> billentyű helye, az <code class="docutils literal notranslate"><span class="pre">x</span></code>-<code class="docutils literal notranslate"><span class="pre">y</span></code> betűpár és a többi nem alfanumerikus karakter kódja szoftveresen átdefiniálható a magasabb szintű műveleteknél (pl. Bluetooth párosításnál az ANSI változat <code class="docutils literal notranslate"><span class="pre">0</span></code>-ját kell beírni szinte mindig függetlenül a feliratoktól.), a fizikai hosszú <code class="docutils literal notranslate"><span class="pre">í</span></code> billentyű hiánya nem pótolható utólag. Bár át lehet matricázni vagy fizikailag ki lehet cserélni az egyes billentyűk feliratait akár gyárilag is (ezeket a valójában ANSI billentyűzeteket nevezik néha <strong>QUERTZ billentyűzeteknek</strong>), csak az <strong>ISO kiosztású (ISO/IEC 9995-2)</strong> többnyire <strong>nemzetközi ISO (ISO international)</strong> billentyűzetek fogják tartalmazni a szükséges billentyűket a teljes magyar kiosztáshoz a dedikált fizikai hosszú i billentyűvel. Manapság létezik még a Japán típusú, <strong>JIS (JIS X 6002-1980)</strong> billentyűzet is, mely az ázsiai nyelvekre összpontosít. <a class="reference external" href="https://blog.ansi.org/standardization-of-keyboard-layouts/">Napjainkban ezek a fizikai kialakítások</a> vannak egy adott nyelvnek megfelelően felcímkézve.</p>
+</section>
+<section id="karakterek-es-nyelvek-lokalizacio-absztrakt-modon">
+<span id="karakterek-es-nyelvek"></span><h2>Karakterek és nyelvek (lokalizáció absztrakt módon)<a class="headerlink" href="#karakterek-es-nyelvek-lokalizacio-absztrakt-modon" title="Link to this heading"></a></h2>
+<p>Egy szöveg legkisebb szemantikus jelentést tartalmazó, absztrakt logikai egységei a <strong>karakterek</strong>, melyek egy számítógépen keletkezhetnek például a fent említett billentyűkódokból. Ennek az absztrakciós szintnek a célja a bevitel és a megjelenítés közötti kapcsolat megteremtése, mivel ez a kapcsolat nyelvenként és használati esetenként eltérő lehet. Egy karakter lehet betű, szám, írásjel vagy szóköz. Az angol ábécé 26 betűjét 26 karakterrel reprezentáljuk, viszont ezek csak a kisbetűk, így igazából az angol ábécéhez összesen 52 karaktert tudunk társítani, mivel a kis a (<code class="docutils literal notranslate"><span class="pre">a</span></code>) és a nagy a (<code class="docutils literal notranslate"><span class="pre">A</span></code>) két különböző karakternek számít. A magyar ábécé az angol ábécé betűin felül tartalmaz ékezetes betűket (pl. á, í, ő, ű), melyek külön karakternek számítanak, valamint két és három karakterből álló többjegyű betűket (<em>digráfok</em>, és <em>trigráfok</em> pl. sz, cs, gy, ny, dzs) is, így összesen 35 karakterre van szükség a magyar ábécé 44 betűjének leírásához. A karakterek egymásutáni sorozatait <strong>karakterláncoknak</strong>, angolul <strong>stringeknek</strong> hívjuk.</p>
+<p>A fentiekből látható, hogy az egyes karaktereknek vannak tulajdonságaik – ahogy absztrakt szinten a betűknek is –, melyeket össze kell egyeztetni az intuíciónkkal (lásd <a class="reference internal" href="unicode_szemlelete.html#tulajdonsagok"><span class="std std-ref">Tulajdonságok</span></a> rész). Ebből a megközelítésből pedig további problémák származnak: binárisak legyenek-e a tulajdonságok, vagy pontosan milyen értékekkel rendelkezhetnek? Például a karakterek között vannak „kisbetűk” és „nagybetűk”, ami adná magát mint bináris tulajdonság (lásd <a class="reference internal" href="ascii.html#kis-es-nagybetusites"><span class="std std-ref">A kis- és nagybetűsítés</span></a> rész), de nem minden karaktert tudunk besorolni ebbe a két osztályba (pl. arab számok és írásjelek). Továbbá vannak „látható” és „nem látható” karakterek (pl. <em>fehér szóközök (white space)</em>), melyek már sokkal egyértelműbben választhatók szét. Bizonyos munkafolyamatok megkövetelhetik az átjárhatóságot az egyes tulajdonságokkal rendelkező karakterosztályok között az intuitív működéshez (pl. kis-nagybetűk egyenlősége a kis- és nagybetűre érzéketlen keresés esetén).</p>
+<p>Alapvető elvárásnak tűnik tehát, hogy minden karaktert meg lehessen különböztetni a többitől egy egyértelmű „kóddal”, és a tulajdonságaik mentén meg tudjuk teremteni köztük a szükség szerinti átjárást. Ez az írott szövegben a betűk formájával érhető el, de a számítógép esetében teljesen más gondolkodásra van szükség, mivel a „betűk formája” független a tárolt karakterektől.</p>
+</section>
+<section id="glifak">
+<span id="id3"></span><h2>Glifák<a class="headerlink" href="#glifak" title="Link to this heading"></a></h2>
+<p>Egy karakter megjelenített formáját, vagyis a karakterek „ábráját”, melyet a papíron vagy a számítógépen látunk, hivatalos nevén <strong>glifának</strong> nevezzük. A glifák különféle <strong>betűkészletekben</strong> vannak csoportosítva (betűtípusok/fontok), így egy karakterhez rengeteg glifa tud társulni. Például a kis a betű (<code class="docutils literal notranslate"><span class="pre">a</span></code>) karakterét tudjuk így –</p>
+<a class="reference internal image-reference" href="../_images/comfortaa_kis_a.png"><img alt="../_images/comfortaa_kis_a.png" class="align-center" src="../_images/comfortaa_kis_a.png" style="width: 400px;" /></a>
+<p>– és így is –</p>
+<a class="reference internal image-reference" href="../_images/eb_garamond_kis_a.png"><img alt="../_images/eb_garamond_kis_a.png" class="align-center" src="../_images/eb_garamond_kis_a.png" style="width: 450px;" /></a>
+<p>– ábrázolni.</p>
+</section>
+<section id="betutipusok">
+<span id="id4"></span><h2>Betűtípusok<a class="headerlink" href="#betutipusok" title="Link to this heading"></a></h2>
+<p>A betűtípusok formátumuk szempontjából lehetnek hagyományos <strong>bittérképes (bitmap)</strong> és modern <strong>vektoros (TrueType)</strong> típusúak. A bittérképes betűkészletben minden mérethez külön „képet” kell tárolni a megfelelő méretű betűk előállításához. Az egyes képek képpontjainak színeihez tartozó fix bithosszúságú értékek sorban egymás után egy úgynevezett „bittérképen” kerülnek tárolásra (lásd még <a class="reference external" href="https://en.wikipedia.org/wiki/BMP_file_format">BMP formátum</a>). Ezzel szemben a vektoros betűtípusok esetén csak a megjelenítéshez felhasznált geometriai alakzatok paraméterei tárolódnak, a különböző betűméretek pedig dinamikusan generálhatóak. A kettő közti különbség praktikusan abban nyilvánul meg, hogy az utóbbi tetszőleges méretre nagyítható úgy, hogy nem veszít élességéből, míg az előbbi kockásodik vagy homályos lesz a nagyítás során, ha az adott méret nincs benne a betűkészletben.</p>
+<p>A betűk formáját tekintve az egyes betűtípusoknak lehet például <em>dőlt</em> és <strong>félkövér</strong> változata, ezek más-más glifával jelennek meg és szigorúan véve külön betűtípusnak számítanak. Egy másféle felosztás szerint a betűtípusok lehetnek <strong>Sans-serif</strong> és <strong>Serif</strong> típusúak. Az előbbibe tartoznak azok az ábrázolások, melyeknek nincs talpa (<strong>talpatlan</strong>), az utóbbiba pedig, melyeknek van (<strong>talpas</strong>).</p>
+<a class="reference internal image-reference" href="../_images/serif_sanserif.png"><img alt="../_images/serif_sanserif.png" class="align-center" src="../_images/serif_sanserif.png" style="width: 261.45px; height: 101.85000000000001px;" /></a>
+<p>Mivel az egyes betűkészletek különböző licencekkel rendelkeznek (pl. korlátozott terjeszthetőség, fizetős betűkészletek), bizonyos betűkészletek nem mindig elérhetőek a rendszerben (pl. a <em>Microsoft fontok</em> Linuxon). Előfordulhat az is, hogy a különböző nyelvekre kitalált betűkészletekben bizonyos karakterek (magyarban tipikusan a hosszú ő (<code class="docutils literal notranslate"><span class="pre">ő</span></code>) és hosszú ű (<code class="docutils literal notranslate"><span class="pre">ű</span></code>) nem mindig képezik a betűtípus részét. Mindkét esetben a <strong>helyettesítési szabályoknak</strong> megfelelően az előre telepített elérhető fontokból próbálja a rendszer megjeleníteni a kívánt módon a szöveget. Ezért fordulhat elő, hogy bizonyos betűk nem hasonlítanak a többire, illetve, hogy egy dokumentum más-más rendszerek alatt másképp jelenik meg (lásd <a class="reference internal" href="unicode_szemlelete.html#normalizacio-es-spam-szures"><span class="std std-ref">Normalizáció és SPAM szűrés</span></a> rész).</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/font_helyettesites.png"><img alt="../_images/font_helyettesites.png" src="../_images/font_helyettesites.png" style="width: 662.0px; height: 78.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">Az eredetileg használni kívánt Betűkészlet (<em>Segoe UI Bold</em>) nem tartalmazza az <code class="docutils literal notranslate"><span class="pre">ő</span></code> és <code class="docutils literal notranslate"><span class="pre">ű</span></code> betűket, így az <strong>helyettesítve van</strong> a <em>Times New Roman</em> betűkészlettel, amiben elérhetőek. (<a class="reference external" href="https://font.download/font/segoe-ui-4">Szabadon kipróbálható.</a>)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Az ilyen helyettesítések másik következménye lehet, hogy nem ugyanannyi helyet foglal el a szöveg az egyik betűtípussal, mint a másikkal, ami a tördelésre is hatással lehet. Ez tipikusan a <em>Microsoft Word</em> dokumentumok <em>LibreOffice-ban</em> való megnyitásakor szembetűnő, amikor pár sor átcsúszik a következő lapra. Ennek oka, hogy a betűtípusoknak például mások a <em>szélességi arányai</em>, emellett az egyes betűk is eltérő szélességűek (pl. <code class="docutils literal notranslate"><span class="pre">I</span></code> és <code class="docutils literal notranslate"><span class="pre">M</span></code>): ez a két tulajdonság önmagában is nagy mozgásteret ad a betűk megjelenítésének, és mellékhatásként felerősíti a különböző megjelenítőkön tapasztalható eltéréseket.</p>
+<p>Számtalan esetben (pl. programozásnál, táblázatokban vagy régi, karakterorientált megjelenítőknél) kívánatos lehet a sorok „hálószerű” megjelenítése, melyben az ugyanannyi karakterből álló karaktersorok egyforma hosszúak, illetve a karakterek a különböző pozíciókban egymás alatt helyezkednek el. Ezeket a betűkészlettípusokat <strong>fix szélességű betűkészleteknek</strong> nevezzük, míg a szöveg folyamatos olvasásához jobban illeszkedő típusokat <strong>változó szélességű betűkészleteknek</strong> hívjuk.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bevezetes.html" class="btn btn-neutral float-left" title="Bevezetés" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="karakterkodolas_tortenete.html" class="btn btn-neutral float-right" title="A karakterkódolás története" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ELTE-DH. Az anyag a Creative Commons, Nevezd meg! - Így add tovább! CC-BY-SA 4.0 Nemzetközi Licenc feltételeinek megfelelően, permalinkes (kattintható és az adott cikkre mutató) forrásmegjelöléssel szabadon felhasználható.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

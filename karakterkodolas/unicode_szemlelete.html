@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Unicode szemlélete &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A Unicode reprezentációk" href="unicode_reprezentaciok.html" />
+    <link rel="prev" title="Nemzetköziesítés hackeléssel" href="nemzetkoziesites_hackelessel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Digitális bölcsészet alapok
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="karakterkodolas_index.html">Karakterkódolás</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bevezetes.html">Bevezetés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html">Absztrakciós szintek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html">A karakterkódolás története</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html">ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iso8859_csalad.html">Az ISO 8859 család</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html">Nemzetköziesítés hackeléssel</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A Unicode szemlélete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-unicode-felepitese">A Unicode felépítése</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tulajdonsagok">Tulajdonságok</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#normalizacio-es-spam-szures">Normalizáció és SPAM szűrés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-megjelenites-es-a-kombinalhatosag-modern-felhasznalasa-emotikonok-es-emojik">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lokalizacio">Lokalizáció</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-kis-es-nagybetusites-furcsasagai">A kis- és nagybetűsítés furcsaságai</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html">A Unicode reprezentációk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html">Karakterkódolás a gyakorlatban</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../impresszum.html">Impresszum</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digitális bölcsészet alapok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="karakterkodolas_index.html">Karakterkódolás</a></li>
+      <li class="breadcrumb-item active">A Unicode szemlélete</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/karakterkodolas/unicode_szemlelete.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="a-unicode-szemlelete">
+<span id="id1"></span><h1>A Unicode szemlélete<a class="headerlink" href="#a-unicode-szemlelete" title="Link to this heading"></a></h1>
+<p>Az elvárások egy univerzális karakterkódolással szemben igen magasak:</p>
+<ul class="simple">
+<li><p>A világ összes – nem csak latin és nem csak balról jobbra író – nyelvének minden betűjét, számát és írásjelét egyértelműen, tipográfiailag helyesen kell tudni benne jelölni, akár egyszerre, és korlátozott beviteli eszközök esetén is. Emellett nyitottnak kell lennie a további bővítésre.</p></li>
+<li><p>Az ASCII szabvánnyal való kompatibilitás (legalább a tartalmazott karakterek tekintetében, optimálisan reprezentációban is).</p></li>
+<li><p>A kis és nagybetűk közötti konverzió (ami nyelvfüggő).</p></li>
+<li><p>A karaktersorozatok nyelvfüggő ábécésorrendbe rendezése, és a több karakteres betűk (dzs, sz stb.) helyes kezelése.</p></li>
+<li><p>Több bájton való tárolás esetén (ami elkerülhetetlen) a bitek és bájtok sorrendjének egyértelmű definiálása a különböző architektúrákon való működés végett.</p></li>
+<li><p>A több bájton való tárolás problémájának megoldása: a <strong>fix bájtszélességű</strong> karakterek (<strong>wide character</strong>) pazarlók, viszont a <strong>változó szélességű</strong> karakterek (<strong>multibyte</strong>) nem indexelhetőek jól (szétvágódhatnak a több bájtos karakterek).</p></li>
+</ul>
+<p>Ezekre a problémákra több szervezet is éveken keresztül próbált megoldást találni. Egyfelől az ISO, melynek munkatársai az <strong>ISO 10646</strong>, más néven <strong>Universal Coded Character Set (UCS)</strong> szabványon dolgoztak. Másfelől a 80-as évek legnagyobb szoftvercégei megalakították a <strong>Unicode Consortiumot</strong>, mely a <strong>Unicode</strong> karakterkészlettel (Illusztráció: <a class="reference external" href="https://www.youtube.com/watch?v=-n2nlPHEMG8">The Unicode Consortium Overview</a>) megpróbálta betölteni azt a piaci rést, mely a karakterkódolás egységesítése terén nyílt. Az ISO 10646 által definiált Universal Coded Character Set (UCS) tehát egy nemzetközi szabvány, a Unicode Consortium karakterkészlete, a Unicode pedig egy ipar által fejlesztett egyezményes kódtábla. Ezek manapság szinonimaként használhatók, abból kifolyólag, hogy az 1990-es évek elején a két szervezet megállapodott, hogy együtt dolgoznak tovább, és igaz, a mai napig külön publikálnak új változatokat, <a class="reference external" href="https://en.wikipedia.org/wiki/Universal_Coded_Character_Set#Differences_from_Unicode">a két karakterkódolás a betűk reprezentációjának szintjén megegyezik</a>. 2023 végére a 15. verziónál tart a szabvány, ami mutatja, hogy szükség esetén jól bővíthető.</p>
+<p>A modern szövegeknél gyakorlatilag csak Unicode (UTF-8) szövegekkel lehet találkozni, és mára szinte az összes rendszer teljesen támogatja. Nincs szükség az ékezetlen és egyéb egyszerűsített formák használatára, viszont még egy évtizeddel ezelőtt is nagy számban voltak olyan rendszerek és szövegek, amelyek Latin vagy más régi kódolást használtak, és modernizálás nélkül kerültek archiválásra. Sokszor pedig a korlátozott beviteli lehetőségek (pl. billentyűzetkiosztás) miatt vagy megszokásból egyszerűbb a felhasználóknak ékezet nélkül vagy helytelen tipográfiával bevinni a karaktereket. Így elkerülhetetlen, hogy ilyen szövegekkel is találkozzon az ember.</p>
+<section id="a-unicode-felepitese">
+<span id="id2"></span><h2>A Unicode felépítése<a class="headerlink" href="#a-unicode-felepitese" title="Link to this heading"></a></h2>
+<p>Minden karakter kap egy számot (un. <strong>kódpontot</strong>). Az <a class="reference internal" href="ascii.html#ascii"><span class="std std-ref">ASCII kódtábla</span></a> összes karakteréhez tartozó kódpont át lett véve (mint a legtöbb karakterkódolási standard esetében), így a benne foglalt karakterek szintjén – és az UTF-8 kódolási forma esetében a reprezentáció szintjén is (lásd <a class="reference internal" href="unicode_reprezentaciok.html#utf8"><span class="std std-ref">UTF-8, a több bájtos, nem fix szélességű karakterkódolás</span></a> rész) – visszafelé kompatibilis az ASCII kódtáblát használó régebbi rendszerekkel. A többi karakterkódoláshoz képest a Unicode-ban a reprezentáció teljesen külön lett választva a karakter definíciójától, mivel egy karakter akár többféleképpen is reprezentálható (multibyte vs. wide character reprezentációk).</p>
+<p>Ahogy az ASCII kódtábla esetében, a karakterek itt is tudatosan vannak elhelyezve: a kódtábla 16 bites, úgynevezett <strong>síkokra</strong> van osztva. Összesen 17 sík van, darabonként 65 536, azaz összesen 1 114 112 kódpont. Az első sík az <strong>alapszintű többnyelvű sík (BMP – Basic Multilingual Plane)</strong>, ez tartalmazza majdnem az összes ma használatos karaktert, és lehetővé teszi a szinte határtalan bővíthetőséget. A síkokon belül nevekkel ellátott, különböző méretű <strong>blokkok</strong> találhatók. A „sima” karakterek mellett vannak speciális, például kombinálódó karakterek is (lásd <a class="reference internal" href="karakterkodolas_tortenete.html#nyomtatas-es-olombetuk"><span class="std std-ref">Nyomtatás és az ólombetűk</span></a> valamint <a class="reference internal" href="#megjelenites-es-komb"><span class="std std-ref">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</span></a> részek), amelyekkel szinte a végtelenségig bővíthető a kódtábla kifejező ereje.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/unichart-printed.jpg"><img alt="../_images/unichart-printed.jpg" src="../_images/unichart-printed.jpg" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text"><a class="reference external" href="https://ian-albert.com/unicode_chart/">Ian Albert</a> így vizualizálta az egész Unicode táblázatot (forrás: <a class="reference external" href="https://xivilization.net/~marek/tex/unicode/unichart-printed.jpg">https://xivilization.net/~marek/tex/unicode/unichart-printed.jpg</a>).</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A kódpontok jelölése <strong>U+XXXX</strong>, amelyekben az XXXX legalább 4 darab <strong>hexadecimális számjegy</strong>. Az egyes betűkészletek eldönthetik, hogy rendelnek-e glifát az adott kódponthoz, így nem minden karakternek van minden betűkészletben megfelelője, és a megjelenésük betűkészletenként eltérhet (lásd <a class="reference internal" href="absztrakcios_szintek.html#betutipusok"><span class="std std-ref">Betűtípusok</span></a> valamint <a class="reference internal" href="#megjelenites-es-komb"><span class="std std-ref">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</span></a> részek).</p>
+<p>Az alábbiakban a Unicode kódtábla karaktereiből mutatunk be néhány példát.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/unc1.png"><img alt="../_images/unc1.png" src="../_images/unc1.png" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-text">A szkíta „kha” karakter kapta például a 43 155 kódpontot (U+A893).</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/unc2.png"><img alt="../_images/unc2.png" src="../_images/unc2.png" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-text">A bizánci zenei jelek közül az „Oxeia Dipli” kapta a 118 788 kódpontot (U+1D004).</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/unc3.png"><img alt="../_images/unc3.png" src="../_images/unc3.png" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-text">A <em>225 fokban elforgatott fekete huszár (sakk)</em> pedig a 129 585 kódpontot (U+1FA31).</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>2010-től megjelentek az emojik is a Unicode tárházában (lásd <a class="reference internal" href="#megjelenites-es-komb"><span class="std std-ref">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</span></a> rész):</p>
+<table class="docutils align-center">
+<tbody>
+<tr class="row-odd"><td><p class="centered">
+<strong>Karakter</strong></p></td>
+<td><p class="centered">
+<strong>🙂</strong></p></td>
+<td><p class="centered">
+<strong>😎</strong></p></td>
+<td><p class="centered">
+<strong>🦔</strong></p></td>
+</tr>
+<tr class="row-even"><td><p class="centered">
+<strong>Kódpont (decimális)</strong></p></td>
+<td><p class="centered">
+<strong>128 578</strong></p></td>
+<td><p class="centered">
+<strong>128 526</strong></p></td>
+<td><p class="centered">
+<strong>129 428</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p class="centered">
+<strong>Kódpont</strong></p></td>
+<td><p class="centered">
+<strong>U+1F642</strong></p></td>
+<td><p class="centered">
+<strong>U+1F60E</strong></p></td>
+<td><p class="centered">
+<strong>U+1F994</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tulajdonsagok">
+<span id="id3"></span><h2>Tulajdonságok<a class="headerlink" href="#tulajdonsagok" title="Link to this heading"></a></h2>
+<p>Az ekkora mennyiségű karakter hatékony kezeléséhez további kapcsolatokat kell definiálni köztük. Ezért minden egyes karakter rendelkezik <strong>tulajdonságokkal</strong>, amelyek leírják a működését a különféle nyelvek esetében. Például <em>szám</em>, <em>kis- vagy nagybetű</em>, <em>központozási karakter</em>, <em>balról jobbra írás</em>. A tulajdonságok lehetnek binárisak (<em>igaz</em>, <em>hamis</em>), vagy lehet értékük (pl. név, nyelv). Ezen felül minden karakternek van egy egyedi neve, amit hivatkozásként lehet használni a karakter leírásához (pl. a <em>\N{LATIN SMALL LETTER O WITH DOUBLE ACUTE}</em> hivatkozást beírva egy <code class="docutils literal notranslate"><span class="pre">ő</span></code> karaktert kapunk).</p>
+<p>A tulajdonságok alapján is meg lehet határozni karaktercsoportokat. Például a <strong>szóköz kategória</strong> egymaga 17 féle tipográfiailag szükséges különböző szóköz karaktert tartalmaz. <a class="reference external" href="https://www.soscisurvey.de/tools/view-chars.php">Ezzel az oldallal meg lehet vizsgálni az ilyen és hasonló, szövegben rejtőző láthatatlan karaktereket</a> (lásd <a class="reference internal" href="nemzetkoziesites_hackelessel.html#karakterhivatkozasok"><span class="std std-ref">Karakterhivatkozások (entitások)</span></a> rész). Ugyanakkor nem szükséges ismernünk az összes elemét egy-egy tulajdonságnak, mert a kategória nevével lehet hivatkozni az osztályt az elemeinek felsorolása helyett, többek között a reguláris kifejezések esetében, jelentősen könnyítve ezzel a munkát (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#unicode-karakterhivatkozasok"><span class="std std-ref">Unicode karakterhivatkozások</span></a> rész).</p>
+</section>
+<section id="normalizacio-es-spam-szures">
+<span id="id4"></span><h2>Normalizáció és SPAM szűrés<a class="headerlink" href="#normalizacio-es-spam-szures" title="Link to this heading"></a></h2>
+<p>Problémát jelenthet, hogy a szövegek kezelésekor a láthatatlan karakterek miatt nem lesz pontos egyezés a stringegyenlőség-vizsgálatnál két ugyanúgy kinéző string között, habár szemre megkülönböztethetetlenek. Emellett megjelentek olyan támadások is, ahol a glifa szemre nagyon hasonlít egy ismert karakterre, vagy szemmel megkülönböztethetetlen tőle, de mivel másik karakter, a gép által máshogy van kezelve, például egy másik, <strong>csali doménre</strong> visz, ahol a titkos adatainkat akarják kicsalni (pl. <a class="reference external" href="https://www.uni-nke.hu/document/uni-nke-hu/Kov%C3%A1cs%20L%C3%A1szl%C3%B3.pdf">gov.hu vs. qov.hu (Kovács László: A kibertér védelme (2018) 163. oldal)</a>). A hagyományos szóalapú spamszűrők nem fogják meg az ilyen karakterekkel leírt szavakat, csak az ember számára érthetőket szűrik ki. Például az alábbi string egy valódi spam email tárgya (láthatóak a furcsa betűk, amelyek nem sima latin betűk, és a spamszűrőt próbálják megzavarni az olvashatóság megtartása mellett):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Invіtаtіоn to Տυbmіt Ρaρҽrs and Јοіn the ΕԀitоrial ᗷоarԀ/Reνіeԝer Team
+</pre></div>
+</div>
+<p><a class="reference external" href="https://apps.timwhitlock.info/unicode/inspect">Ezzel az oldallal meg lehet nézni karakterenként a gyanús stringeket</a>, a fenti példát is, amelyben hemzsegnek a különféle nemzetek betűi (cirill, görög, latin, örmény stb.). Manapság ezek a fajta támadások csak nagyon célzottan jellemzőek (pl. qov.hu vs. gov.hu), mivel a speciális karakterek Unicode karakterosztályok segítségével könnyen szűrhetőek, jelenlétükkel csak gyanúsabbá téve az üzenetet.</p>
+<p>A másik megoldás a Unicode normalizáció, aminek különféle formái vannak, hogy a szövegben szereplő karakterek egységes, hasonlóan kinéző és viselkedő formára alakíthatóak legyenek, könnyítve ezzel az egyenlőségvizsgálatot. A normalizáció az úgynevezett kanonikusan egyenlő karaktereket egységes formára hozza (pl. mindegyik/egyik sem kombinálódó ékezettel írva). Használatára csak nem megbízható forrású adat esetén van szükség. A Unicode-normalizálás <a class="reference external" href="https://onlineunicodetools.com/normalize-unicode-text">egyszerűen kipróbálható ezzel az oldallal</a>. A fenti példa latin karakterekre normalizálva:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Invitation to Svbmit Papers and Join the Editorial Board/Reviewer Team
+</pre></div>
+</div>
+</section>
+<section id="a-megjelenites-es-a-kombinalhatosag-modern-felhasznalasa-emotikonok-es-emojik">
+<span id="megjelenites-es-komb"></span><h2>A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)<a class="headerlink" href="#a-megjelenites-es-a-kombinalhatosag-modern-felhasznalasa-emotikonok-es-emojik" title="Link to this heading"></a></h2>
+<p>A karakterek hagyományosan fehér alapon feketék és érzelemmentesek. Bár léteznek művészi ábrázolások (lásd <a class="reference internal" href="ascii.html#ascii-rajzok"><span class="std std-ref">ASCII rajzok (ASCII art)</span></a> rész) nem céljuk a szövegbe történő beágyazhatóság. A szöveg értelmezését segítő érzelmek kifejezésére nyugaton a hagyományos, ASCII-val leírható, zárójelalapú nyugati <strong>emotikonok</strong> ( <code class="docutils literal notranslate"><span class="pre">:-)</span></code> és <code class="docutils literal notranslate"><span class="pre">:)</span></code> ) terjedtek el, melyek a száj formájával fejezik ki az érzelmeket. Ezzel szemben Japánban a sokkal összetettebb, nem ASCII karaktereket is tartalmazó <strong>kaomojik</strong> (<code class="docutils literal notranslate"><span class="pre">(◕‿◕)</span></code> és <code class="docutils literal notranslate"><span class="pre">(￢‿￢</span> <span class="pre">)</span></code>) divatosak, melyek a <em>manga</em> hagyományaiból táplálkoznak, és elsősorban a szemek formáját variálják. Ezenkívül elérhetőek a <strong>Miscellaneous Symbols (Unicode 1.1, 1993)</strong> blokkban létrehozott jelek (<code class="docutils literal notranslate"><span class="pre">☏</span></code> és <code class="docutils literal notranslate"><span class="pre">☃</span></code>).</p>
+<p>A további igények felbukkanásával egyes Japán telekommunikációs cégeknél megjelentek további, nem szabványos érzelemjelölési módszerek a még nem foglalt kódpontokon, hogy ezzel nyerjenek helyet a maximum 160 karakter hosszú SMS-ekben. Ezt a jelenséget szabványosítandó, 2008-ban beterjesztették, és a Unicode 6.0-val (2010) beépítették a Unicode kódtáblába az <strong>emojikat</strong> mint önálló karaktereket, melyek az emotikonokkal ellentétben nem ASCII karakterekből állnak, hanem saját glifákkal rendelkeznek.</p>
+<p>A Unicode 8.0-ig (2015) kellett csak várni, hogy megjelenjenek az első módosítók az emojikhoz, hogy az emberek a bőrszínüknek megfelelő változatot tudják használni és beállítani alapértelmezettnek. Ezt az írógépektől örökölt kombinálódó karakterekkel (lásd <a class="reference internal" href="karakterkodolas_tortenete.html#bevitel-gyorsitasa"><span class="std std-ref">A bevitel gyorsítása írógéppel</span></a> valamint <a class="reference internal" href="nemzetkoziesites_hackelessel.html#repulo-ekezetek-es-proszeky-kod"><span class="std std-ref">Repülő ékezetek és Prószéky-kód</span></a> részek) lehet megoldani anélkül, hogy túlságosan nagy mennyiségű karaktert kelljen lefoglalni az összes változatnak, és kifogyjunk a reprezentálható karakterekből. A rendszer azóta is tovább bonyolódik, és megjelentek a hagyományos emotikonokat háttérbe szorító karakterhivatkozások (<code class="docutils literal notranslate"><span class="pre">:smile:</span></code> és <code class="docutils literal notranslate"><span class="pre">:+1:</span></code>), az ASCII karakterekből kaomojit gyártó megoldások (<a class="reference external" href="https://asciimoji.com/">ASCIImojik</a>), valamint a kombinálódó karakterhivatkozások, melyek egymásra rakásával nemcsak a karakter bőrszíne, hanem a neme is meghatározható (pl. <a class="reference external" href="https://emojipedia.org/pregnant-man/">terhes férfi emoji</a> (🫃), háttér: <a class="reference external" href="https://blog.emojipedia.org/why-is-there-a-pregnant-man-emoji/">Why Is There a Pregnant Man Emoji?</a>).</p>
+<p>Az, hogy pontosan hogyan nézzen ki az emoji, nincs meghatározva a Unicode rendszerében (lásd <a class="reference internal" href="absztrakcios_szintek.html#glifak"><span class="std std-ref">Glifák</span></a> rész). Ezért van az, hogy az <em>iPhone</em> és az <em>Android</em> készülékeken vagy a különböző böngészőkben nem pont ugyanolyan a mosolygós fej. <a class="reference external" href="https://unicode-table.com/en/1F994/">A karakterek, például a sündisznó jel (🦔) különböző glifáit ezen az oldalon lehet megnézni</a>.</p>
+<p>Manapság gyakori jelenség, hogy az emberek az egyszerűség kedvéért <strong>képírásban</strong> kommunikálnak <strong>emoji szekvenciákkal</strong>, szöveg nélkül – teret hagyva az üzenet szabadabb értelmezésének, ami nem mindig sül el jól (Illusztráció: <a class="reference external" href="https://www.nbcnews.com/business/business-news/ryan-cohen-bed-bath-beyond-investor-emoji-lawsuit-rcna97379">Former Bed Bath &amp; Beyond investor Ryan Cohen must face emoji-inspired shareholder suit</a> és <a class="reference external" href="https://www.reuters.com/world/americas/canadian-farmers-thumbs-up-emoji-leads-62000-fine-undelivered-flax-2023-07-07/">Canadian farmer’s thumbs-up emoji leads to $62,000 fine for undelivered flax</a>). A mondanivaló ilyenfajta kifejezését nehezíti, hogy a Unicode pozitív szemléletet követ az emojik terén, tehát gyakorlatilag nincsenek negatív, obszcén, szexualizált vagy korhatáros emojik. Ez a döntés viszont kisiklott, mivel ahogy a szavaknál, megjelent az emojiknak is egy másodlagos, szleng értelme, mely sokszor lehet például szexualizált (🍑, 🍆 és 💦). Szerencsére az értelmezésükhöz már van <a class="reference external" href="https://hotemoji.com/eggplant-emoji.html">emoji magyarázó szótár</a>, ami tartalmazza a szleng értelmezést is! Az ilyen „rejtjelezés” célja az automatikus moderáció elkerülése és a tabutémák, többek között az „álhírek” vagy „gyűlöletbeszéd” titokban történő terjesztése: például vakcina tagadó csoportok esetén répa (🥕) emoji használata az „oltás” kifejezés helyett. (Illusztráció: <a class="reference external" href="https://www.bbc.com/news/technology-62877597">Anti-vax groups use carrot emojis to hide Facebook posts</a>). Ezek a megoldások nyelvi jellegükből adódóan a későbbiekben komoly tudományos kutatás témájává is válhatnak (v.ö. <a class="reference external" href="http://ancientgraffiti.org/Graffiti/">Pompeii falfirkák</a>). Egy másik tanulságos eset, hogy emojikból is megárt a sok, amikor <a class="reference external" href="https://web.archive.org/web/20160517012410/http://www.hacker9.com/single-message-can-crash-whatsapp.html">a Whatsapp okostelefonos applikációját táolról össze lehetett omlasztani pusztán 4000 emoji egy üzenetben való elküldésével.</a> Látható tehát, hogy az emberi kreativitás határtalan, de <a class="reference external" href="https://en.wikibooks.org/wiki/Unicode/Versions">a Unicode még mindig tartja magát</a>.</p>
+</section>
+<section id="lokalizacio">
+<span id="id5"></span><h2>Lokalizáció<a class="headerlink" href="#lokalizacio" title="Link to this heading"></a></h2>
+<p>A különböző reprezentálható nyelveknek saját inherens tulajdonságaik vannak (pl. <strong>ábécé sorrend</strong>, <strong>tizedes és ezres elválasztó karakterek</strong>, <strong>idézőjelek</strong>, <strong>pénznem</strong>, <strong>dátum</strong>). Ezek nyelvhelyes megjelenítésére és a nyelvek közötti könnyű változtatás céljából jött létre a <strong>lokalizáció</strong> a Latin kódtáblák megjelenésekor, mely a Unicode karakterkészlet létrehozása után hatalmas fejlődésen ment keresztül, hogy minden szóba jöhető nyelvi sajátosságot ki tudjon szolgálni megfelelő sebességgel. A mindennapi gyakorlatban a lokalizáció nyelve megadható az egész rendszer számára és felülbírálható egy program vagy programstruktúra (shell) számára.</p>
+<p>Az egyes <strong>területi beállítások (locale)</strong> adatai általában nem érhetőek el minden nyelvre az alaptelepítés részeként, ezért ezt szükséges ellenőrizni és a hiányzókat telepíteni. A Linux parancssorban a <code class="docutils literal notranslate"><span class="pre">locale</span></code> parancs megmutatja az aktuális beállításokat, és a <code class="docutils literal notranslate"><span class="pre">locale</span> <span class="pre">-a</span></code> parancs pedig az elérhető lokalizációkat. A Latin-2-es magyar beállítás kódja <code class="docutils literal notranslate"><span class="pre">hu_HU</span></code>, a Unicode-é <code class="docutils literal notranslate"><span class="pre">hu_HU.UTF-8</span></code>, míg az angol beállításhoz alapesetben az USA által használt <code class="docutils literal notranslate"><span class="pre">en_US</span></code> és <code class="docutils literal notranslate"><span class="pre">en_US.UTF-8</span></code> változatok vannak telepítve alapértelmezésben, de még használatos a számtalan változat közül a brit <code class="docutils literal notranslate"><span class="pre">en_GB</span></code> és <code class="docutils literal notranslate"><span class="pre">en_GB.UTF-8</span></code> változat is.</p>
+<p>Fontos kiemelni a <strong>C</strong> vagy más néven <strong>POSIX locale</strong>-t (<code class="docutils literal notranslate"><span class="pre">C</span></code> és <code class="docutils literal notranslate"><span class="pre">C.UTF-8</span></code>), mely a C programozási nyelvből származó beállítás, amely a lehető legkevesebb szabályt alkalmazza a stabil kimenet (pl. ábécébe rendezés) eléréséhez. A nem-interaktív rendszerek (pl. Python) alapbeállításban ezt használják a vele elérhető sebesség miatt.</p>
+<p>A legszembetűnőbb formája a területi beállításoknak az <strong>ábécébe rendezés (kolláció)</strong>, mivel a magyar nyelvben ékezetes betűk és két vagy három karakteres betűk is vannak, amelyek angol nyelvű beállítás esetén magyar szemmel furán rendeződnek sorrendbe, hiszen az ékezetes betűk hátra kerülnek az angol ábécé utolsó betűje után. <a class="reference external" href="https://hup.hu/cikkek/20180330/jojj_el_szabadsag_te_szulj_nekem_rendet">Ennek elérése sok különleges szabály alkalmazását igényli</a>, ami nagyon le tudja lassítani a futtatást. Ezért, ha csak a reprodukálható sorrend a fontos (pl. azonos elemek csoportosításánál), akkor használjuk a <code class="docutils literal notranslate"><span class="pre">C.UTF-8</span></code> lokalizációt, és csak „emberi felhasználásra” a magyar kollációt. Így nagy sebességnövekedés érhető el bizonyos feladatok esetében.</p>
+</section>
+<section id="a-kis-es-nagybetusites-furcsasagai">
+<span id="kis-es-nagybetusites"></span><h2>A kis- és nagybetűsítés furcsaságai<a class="headerlink" href="#a-kis-es-nagybetusites-furcsasagai" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://richardjharris.github.io/all-sorts-of-things-you-can-get-wrong-in-unicode-and-why/">A lokalizáció a lehetőségek mellett problémákat is szült</a>. A különféle nyelveken a <strong>kis- és nagybetűsítés</strong> egyszerű folyamat, de a Unicode-ban ezek a nyelvek egyszerre, egy dokumentumon belül is jelen lehetnek, így a kis- és nagybetűsítési szabályok könnyen összekeveredhetnek. Például a német <strong>„Eszett” betű, németül „scharfes S” karakter</strong> (<code class="docutils literal notranslate"><span class="pre">ß</span></code>) a kisbetűsítés során <code class="docutils literal notranslate"><span class="pre">ss</span></code>-szé, azaz dupla <code class="docutils literal notranslate"><span class="pre">s</span></code>-sé változik, tehát a kisbetűsítés bemenetén jelenlevő egy karakterből kisbetűsítés után két karakter lesz, viszont a fordított irányban már <code class="docutils literal notranslate"><span class="pre">SS</span></code>-t kapunk, mivel az <code class="docutils literal notranslate"><span class="pre">s</span></code> karakterek külön-külön nagybetűsítődnek.</p>
+<p>Egy másik szemléletes példa, hogy míg a magyar és az összes latin nyelv beállítása szerint a <em>pontos kis „i”</em> (<code class="docutils literal notranslate"><span class="pre">i</span></code>) nagybetűs változata <code class="docutils literal notranslate"><span class="pre">I</span></code> <em>(pont nélküli nagy „i”)</em>, addig a török nyelvben van egy <em>pontos „i”</em> (<code class="docutils literal notranslate"><span class="pre">i</span></code>) és egy <em>pont nélküli „i”</em> (<code class="docutils literal notranslate"><span class="pre">ı</span></code>), és mindkettőnek van nagy- és kisbetűs változata, összesen négy karaktert eredményezve: a <em>kis pontos „i”-nek</em> (<code class="docutils literal notranslate"><span class="pre">i</span></code>) a <em>nagy pontos „i”</em> (<code class="docutils literal notranslate"><span class="pre">İ</span></code>), a <em>kis pont nélküli „i”-nek</em> (<code class="docutils literal notranslate"><span class="pre">ı</span></code>) pedig a <em>nagy pont nélküli „i”</em> (<code class="docutils literal notranslate"><span class="pre">I</span></code>) a párja. Mivel a kis- és nagybetűsítés a lokalizációs beállításoktól függ, török nyelvű beállítások mellett nem fog megjelenni vagy eltűnni a pont az „i”-ről, míg bármelyik latin nyelvű beállítást használva a pont megjelenik, illetve eltűnik, a török nyelv szempontjából új betűt eredményezve, és ugyanez igaz a török nyelvű mindkétféle „i” betű latin nyelvi beállításokkal történő kis- és nagybetűsítése esetén. Az ilyen egybeesések miatt kell a megfelelő lokalizációs beállítások mellett kis- és nagybetűsíteni, hogy elkerüljük a nem várt változásokat.</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nyelv</p></th>
+<th class="head"><p>Betű</p></th>
+<th class="head"><p>Kisbetű megfelelő</p></th>
+<th class="head"><p>Nagybetű megfelelő</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>magyar</p></td>
+<td><p>pontos „i” (<code class="docutils literal notranslate"><span class="pre">i</span></code>)</p></td>
+<td><p>pontos kis „i” (<code class="docutils literal notranslate"><span class="pre">i</span></code>)</p></td>
+<td><p>pont nélküli nagy „i” (<code class="docutils literal notranslate"><span class="pre">I</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>török</p></td>
+<td><p>pontos „i” (<code class="docutils literal notranslate"><span class="pre">i</span></code>)</p></td>
+<td><p>pontos kis „i” (<code class="docutils literal notranslate"><span class="pre">i</span></code>)</p></td>
+<td><p>pontos nagy „i” (<code class="docutils literal notranslate"><span class="pre">İ</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>török</p></td>
+<td><p>pont nélküli „i” (<code class="docutils literal notranslate"><span class="pre">ı</span></code>)</p></td>
+<td><p>pont nélküli kis „i” (<code class="docutils literal notranslate"><span class="pre">ı</span></code>)</p></td>
+<td><p>pont nélküli nagy „i” (<code class="docutils literal notranslate"><span class="pre">I</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="https://web.archive.org/web/20211106053748/https://eng.getwisdom.io/hacking-github-with-unicode-dotless-i/">Ezt a helyzetet egy ügyes hacker kihasználta</a>, és feltörte a <em>Github-ot</em> az elfelejtett jelszó funkcióján keresztül egy Unicode-ban megengedett török pont nélküli nagy „i” (<code class="docutils literal notranslate"><span class="pre">I</span></code>) használatával. A rendszer a bemenetként kapott Unicode-ban lévő e-mail címet összehasonlítás előtt a normalizáció részeként latin lokalizációnak megfelelően pontos kis i betűre kisbetűsítette, összehasonlította a tárolt adattal, és egyezés után az eredeti bemenetet használta a későbbiekben – hiszen „ugyanaz a kettő”, a támadó e-mail címére küldve az új jelszó megadását lehetővé tevő linket. A hibát azóta javították, de a tanulság az, hogy érdemes odafigyelni a nyelvi beállításokra, és nem interaktív körülmények között a C.UTF-8 locale-t használni (lásd <a class="reference internal" href="#lokalizacio"><span class="std std-ref">Lokalizáció</span></a> rész).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nemzetkoziesites_hackelessel.html" class="btn btn-neutral float-left" title="Nemzetköziesítés hackeléssel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="unicode_reprezentaciok.html" class="btn btn-neutral float-right" title="A Unicode reprezentációk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ELTE-DH. Az anyag a Creative Commons, Nevezd meg! - Így add tovább! CC-BY-SA 4.0 Nemzetközi Licenc feltételeinek megfelelően, permalinkes (kattintható és az adott cikkre mutató) forrásmegjelöléssel szabadon felhasználható.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

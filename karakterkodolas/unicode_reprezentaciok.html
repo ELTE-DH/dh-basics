@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Unicode reprezentációk &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Karakterkódolás a gyakorlatban" href="karakterkodolas_a_gyakorlatban.html" />
+    <link rel="prev" title="A Unicode szemlélete" href="unicode_szemlelete.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Digitális bölcsészet alapok
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="karakterkodolas_index.html">Karakterkódolás</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bevezetes.html">Bevezetés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html">Absztrakciós szintek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html">A karakterkódolás története</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html">ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iso8859_csalad.html">Az ISO 8859 család</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html">Nemzetköziesítés hackeléssel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html">A Unicode szemlélete</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A Unicode reprezentációk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#elet-egy-bajton-tul-a-szeles-karakterek-es-az-utf-16-32">Élet egy bájton túl (a széles karakterek és az UTF-16/32)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-bitek-sorrendje-a-szeles-karakterekben-big-endian-little-endian-es-a-byte-order-mark">A bitek sorrendje a széles karakterekben (big endian, little endian és a byte order mark)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utf-8-a-tobb-bajtos-nem-fix-szelessegu-karakterkodolas">UTF-8, a több bájtos, nem fix szélességű karakterkódolás</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#melyik-reprezentacio-mire-jo">Melyik reprezentáció mire jó?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-karakterreprezentacio-konverzios-hibak-es-a-betuszemet-mojibake">A karakterreprezentáció-konverziós hibák és a betűszemét (mojibake)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html">Karakterkódolás a gyakorlatban</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../impresszum.html">Impresszum</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digitális bölcsészet alapok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="karakterkodolas_index.html">Karakterkódolás</a></li>
+      <li class="breadcrumb-item active">A Unicode reprezentációk</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/karakterkodolas/unicode_reprezentaciok.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="a-unicode-reprezentaciok">
+<span id="az-unicode-reprezentaciok"></span><h1>A Unicode reprezentációk<a class="headerlink" href="#a-unicode-reprezentaciok" title="Link to this heading"></a></h1>
+<p>A legtöbb esetben a gyakorlatban nem szükséges a karakter logikai szintje alá menni, mivel a karakterek reprezentációjának problémája hosszú távra rendezve lett. Ezért is fontos megérteni az elmúlt 200 évben bekövetkezett, a tárolt karakterek számában történt drasztikus léptékváltás  mögötti vállalkozás nagyságát (Braille-írás (1821) és Morse-kód (1840) 64, ASCII (1963) 128, Latin kódtáblák (1987) 4096, Unicode 15.1 (2023) 149 813 darab).</p>
+<p>Többé már nem fér el a reprezentáció egy bájton, így ki kellett találni, hogy hogyan lehet hatékonyan kezelni több bájtot úgy, hogy a bitek sorrendje architektúránként (big endian, little endian típusú számítógépek lásd <a class="reference internal" href="#bitek-sorrendje-a-szeles-karakterben"><span class="std std-ref">A bitek sorrendje a széles karakterekben (big endian, little endian és a byte order mark)</span></a> rész) eltérhet. Nem a Unicode volt az első karakterkészlet, amely erre vállalkozott, de a Unicode karakterkészletben válik szét először az egyes karakterek <strong>logikai</strong>, <strong>átviteli</strong> és <strong>tárolási reprezentációja</strong>, melyeket eltérő problémaként kezel. Ez kiemeli a többi karakterkódolás közül, érdemes tehát tisztában lenni a döntés hátterével és a napi életre gyakorolt hatásával. A fejezet további részében ezért a különféle reprezentációk közötti konverzió alapjairól és a reprezentációk gyakorlati tulajdonságairól lesz szó.</p>
+<section id="elet-egy-bajton-tul-a-szeles-karakterek-es-az-utf-16-32">
+<span id="elet-egy-bajton-tul"></span><h2>Élet egy bájton túl (a széles karakterek és az UTF-16/32)<a class="headerlink" href="#elet-egy-bajton-tul-a-szeles-karakterek-es-az-utf-16-32" title="Link to this heading"></a></h2>
+<p>A számítógépes feldolgozás hagyományos egysége a <strong>bit</strong> (0 vagy 1-es érték), amit történelmi okokból 8-asával <strong>bájtokba</strong> rendezünk, és a bájtokat úgynevezett <strong>szóvá</strong> (két bájt, 16bit), <strong>duplaszóvá</strong> (4 bájt, 32bit), valamint a modern processzorokon <strong>négyesszóvá</strong> (8 bájt, 64 bit) tudjuk összerakni az egységek méretét duplázva. Ekkora méretekben címezhető a memória az explicit memóriakezelésű nyelvekben, mint a C/C++. A Latin kódtáblák tapasztalataiból tudjuk, hogy a Latin kódtáblacsalád 16*128 = 4096 karaktert akar kódolni (az ASCII 128 karaktere + 15-ször a felső 128 elem, lásd <a class="reference internal" href="iso8859_csalad.html#iso-8859-csalad"><span class="std std-ref">Az ISO 8859 család</span></a> rész). Ez 11 biten leírható, de nem használható minden karakter egyszerre. A Unicode eközben 21 bitet használ nagyságrendekkel több karakter egyidejű megcímkézésére (de a jelenleg kiosztott karakterek kényelmesen elférnek 18 biten, tehát bőven van még hely).</p>
+<p>Összehasonlításképpen az Internet alapját képező <strong>IPv4</strong> szabvány 32 bites, és <a class="reference external" href="https://en.wikipedia.org/wiki/IPv4_address_exhaustion">kevésnek bizonyult a világ összes számítógépének megcímzéséhez</a>, ezért bevezették az <strong>IPv6-ot</strong>, amely 128 bites, és lehetővé teszi, hogy minden számítógépnek akár több címe is legyen a jövőbeli növekedési ütemet figyelembe véve is. A számítógépeken az időt leíró <strong>Unix time_t</strong> adattípus, amely 1970. január 1. 00:00:00-tól, a 0 ponttól (<strong>epoch</strong>) másodpercenként egyet növekedve reprezentálja az időt, 32 bites, de csak 2038. január 19. 03:14:07-ig tartanak ki a bitek, így nemrégiben növelték a méretét 64 bitre. A modern processzorok először 8, majd 32 (1995) és manapság 64 bitesek (1999-től kezdve), manapság a grafikus processzorok 128 és 256 bitesek, de a hagyományos processzorok praktikus okokból megmaradtak 64 bitnél. Látható tehát, hogy a bitek számának problémája nem csak a karakterkódolást érinti, és nem is ez a legnagyobb ilyen jellegű probléma. A méretválasztás (és -változtatás) elsősorban a jelenlegi, másodsorban a jövőbeli rendszerekkel való kompatibilitásnak van alárendelve.</p>
+<p>A Unicode 1.0 idejében (1991) egyes processzorok már be tudtak fogadni 32 bitet, de számolni kellett a 16 bites processzorok és a 8 és 16 bites programok tömegével, ami meghatározta, hogy hány bitben lehetett a kódoláskor gondolkodni. Bár a régi programok és processzorok eltűntek, a kódtábla mérete velünk maradt, és valószínűleg az utána jövő rendszereket is meg fogja határozni, ahogy ezt az ASCII is tette.</p>
+<p>A Unicode 1.0 szabvány a processzorok bitjeinek szélességéhez igazodva maradt tehát a két bájtos UCS-2-nél, azaz az úgynevezett <strong>széles karaktereknél (wide character)</strong>, mely később önmagával kompatibilis módon át lett alakítva a (két bájt széles karaktert felhasználó ún. <a class="reference external" href="https://en.wikipedia.org/wiki/Universal_Character_Set_characters#Surrogates">surrogate pair-okkal</a>) több karaktert reprezentálni tudó <strong>UTF-16-ra</strong>. Sajnos egyik változat sem kompatibilis az ASCII-val, és nem képes az összes jelenlegi Unicode karaktert reprezentálni. A széles karakterek rendszere egy nagyon innovatív elképzelés volt, melynek vannak előnyei és hátrányai: a (kétbájtos) fix bájtszélesség azért jó, mert így az adat ismerete nélkül is meg lehet mondani, hogy hol kezdődik, és hol ér véget az n-edik karakter a stringben (n*2 bájt és +1 a karakter vége), nem vágódhatnak „ketté” véletlenül karakterek bájtműveleteknél, viszont a bitek sorrendje architektúránként eltérhet (lásd <a class="reference internal" href="#bitek-sorrendje-a-szeles-karakterben"><span class="std std-ref">A bitek sorrendje a széles karakterekben (big endian, little endian és a byte order mark)</span></a> rész).</p>
+<p>Később megjelent az <strong>UTF-32</strong>, mely 4 bájtot foglal, és bár az ASCII-val még mindig nem kompatibilis, szemben az UTF-16-tal képes reprezentálni az összes Unicode karaktert, ámbár igen pazarló módon (elméletileg is csak 21 bitnyi információ egységesen 32 biten tárolva). A megjelenésekor még nagyon szűkösek voltak a tárolókapacitások, különösen a gépek memóriája. Ezért, valamint az akkoriban nagyon elterjedt ASCII-val való inkompatibilitása miatt nem váltotta be a hozzá fűzött reményeket. Manapság az UTF-32 a programok belső reprezentációjaként használatos, ott, ahol fontos, hogy a karakterek a fix bájtszélesség előnyével rendelkezzenek (indexelés, stringműveletek), és minden Unicode karakter reprezentálható legyen (a memóriaigény rovására).</p>
+</section>
+<section id="a-bitek-sorrendje-a-szeles-karakterekben-big-endian-little-endian-es-a-byte-order-mark">
+<span id="bitek-sorrendje-a-szeles-karakterben"></span><h2>A bitek sorrendje a széles karakterekben (big endian, little endian és a byte order mark)<a class="headerlink" href="#a-bitek-sorrendje-a-szeles-karakterekben-big-endian-little-endian-es-a-byte-order-mark" title="Link to this heading"></a></h2>
+<p>A különböző számítógép architektúrák között nincs egyetértés abban, hogy a memóriában <strong>elölről hátra</strong> (big endian) vagy <strong>hátulról előre</strong> (little endian) olvassák a biteket. A jelenleg használt számítógépek kevés kivétellel little endian típusúak, de ennek egyre kevesebb a jelentősége. Egy számítógépen belül nem tud összekeveredni a két reprezentáció, és az UTF-16BE és UTF-16LE (valamint az UTF-32BE és UTF-32LE) szabvány képes leírni a két állapotot egymástól függetlenül.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/0023_en_big-endian.png" src="../_images/0023_en_big-endian.png" />
+<figcaption>
+<p><span class="caption-text">„SUOY BDIA NE-GI NAID ?” A szavak karaktereit hátulról előre olvasva: YOUS AIDB IG-EN DIAN ?” azaz „YOU SAID BIG-ENDIAN ?” (forrás: <a class="reference external" href="https://0xbabaf000l.blogspot.com/2009/07/suoy-bdia-ne-gi-naid.html">0xbabaf000l.blogspot.com</a>)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Az Internet elterjedésével viszont valahogy meg kellett egyeznie a gépeknek a bitek sorrendjéről az átküldendő adatot illetően. Erre az esetre vezették be az úgynevezett <strong>byte order mark-ot (BOM)</strong>, amely egy speciális szóközkarakternek felel meg (<strong>„nulla hosszú nem törő szóköz”, „angolul zero width no-break space”, ZWNBSP</strong>). Ezt küldték át a bemenet első karaktereként, jelezve a fogadó félnek, hogy bitfordításra lesz szükség a többi karakter esetében – mivel rossz sorrendben olvasva a biteket, az nem eredményez helyes karaktert. Ilyenkor a helyes bitsorrendtől függetlenül az első karakter nem az üzenet része, hanem eldobandó, mivel csak az átvitelt segíti.</p>
+<p>A gyakorlatban néha előfordul az a hiba, hogy mégsem dobódik el, és két string a BOM-al együtt összefűződik. Ekkor a BOM vagy speciális szóközként értelmeződik, vagy nem helyes karakterként, ami <a class="reference external" href="https://unicode.org/faq/utf_bom.html">később váratlan hibát okozhat</a>. <strong>A Windows Jegyzettömbje például, amikor UTF-8 kódolással menti a fájlokat, hozzáadja a BOM karaktert, ami néhány program esetében zavart okozhat.</strong> Erről részletesen a <a class="reference internal" href="#utf8"><span class="std std-ref">UTF-8, a több bájtos, nem fix szélességű karakterkódolás</span></a> részben lesz szó.</p>
+</section>
+<section id="utf-8-a-tobb-bajtos-nem-fix-szelessegu-karakterkodolas">
+<span id="utf8"></span><h2>UTF-8, a több bájtos, nem fix szélességű karakterkódolás<a class="headerlink" href="#utf-8-a-tobb-bajtos-nem-fix-szelessegu-karakterkodolas" title="Link to this heading"></a></h2>
+<p>Nem sokkal a Unix megalkotása után egyik találkozójukon, vacsora közben <strong>Ken Thompson</strong> és <strong>Robert Pyke</strong> rájött, hogyan lehetne karaktereket megfelelően reprezentálni úgy, hogy egy karaktert több bájton lehessen tárolni, viszont a bitsorrend ne jelentsen problémát a rendszerek közötti feldolgozásban, ráadásul kompatibilis maradjon az ASCII kódtáblával. <a class="reference external" href="https://www.cl.cam.ac.uk/~mgk25/ucs/utf-8-history.txt">Az UTF-8 először így került leírásra egy alátétre (placemat)</a>.</p>
+<p>A mára de facto alapértelmezett megoldás okosabb, mint az elődei, de azon az áron, hogy változó bájthosszúságon reprezentálja az egyes Unicode karaktereket. Ennek következménye, hogy az egyes karakterek megkülönböztetése csak a stringnek az adott karakterig történő elolvasásával tehető meg, mert máskülönben nem lehet előre meghatározni az n-edik karakter helyét.</p>
+<p>A UTF-8 minden karaktert, amely az ASCII táblázatban benne van, egy nullával, majd az ASCII 7-bites megjelölésével reprezentál, mivel az ASCII kódtáblában a nyolcadik bit értéke nem definiált (ezt X-szel jelöljük a táblázatban):</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>ASCII (1 + 7-bit)</p></th>
+<th class="head"><p>UTF-8 (8-bit)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">X1000001</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">01000001</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>a</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">X1100001</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">01100001</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>!</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">X0100001</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">00100001</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">X0110110</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">00110110</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Így az eredeti angol ábécé a lehető legkevesebb helyet foglalja egy bájtokra épülő rendszerben, és a UTF-8 kompatibilis minden régebbi, az ASCII-ra épülő kódrendszerrel (lásd <a class="reference internal" href="iso8859_csalad.html#iso-8859-csalad"><span class="std std-ref">Az ISO 8859 család</span></a> rész) a 7-bites ASCII karakterek értelmezésében. Ezt pedig a nyolcadik bit nullára állításával jelzi.</p>
+<p>Ha ennél több helyre van szükség, akkor a UTF-8 a következő konvenciót követi: a <strong>bitfolyamban</strong> (bit stream) ha egyessel kezd egy (8-bites) bájtot (pl. <code class="docutils literal notranslate"><span class="pre">110XXXXX</span></code>), akkor az azt jelenti, hogy kezdődik egy új karakter. Emellett az első bájt utal arra is, hogy a karakter összesen hány bájt helyet fog elfoglalni. Az első bájt elején szereplő 110 például azt jelzi, hogy a karakter összesen két bájton van kódolva, az első bájt 1110 kezdete pedig a karakter hárombájtos hosszúságára utal. A folytatásként értelmezendő bájtok, például kétbájtos karakter esetén a második, hárombájtos karakter esetén pedig a második és a harmadik bájt mindig 01-gyel kezdődik: ez jelzi, hogy folytatásról van szó, nem pedig egy új karaktert kódoló bájtsorozat kezdetéről. (Illusztráció: <a class="reference external" href="https://www.youtube.com/watch?v=MijmeoH9LT4&amp;t=422s">Characters, Symbols and the Unicode Miracle - Computerphile</a>):</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Első bájt</p></th>
+<th class="head"><p>Második bájt</p></th>
+<th class="head"><p>Harmadik bájt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ha egybájtos a karakter</p></td>
+<td><p>0 _ _ _ _ _ _ _</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Ha kétbájtos a karakter</p></td>
+<td><p>1 1 0 _ _ _ _ _</p></td>
+<td><p>0 1 _ _ _ _ _ _</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Ha hárombájtos a karakter</p></td>
+<td><p>1 1 1 0 _ _ _ _</p></td>
+<td><p>0 1 _ _ _ _ _ _</p></td>
+<td><p>0 1 _ _ _ _ _ _</p></td>
+</tr>
+<tr class="row-odd"><td colspan="4"><p class="centered">
+<strong>…</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Így minden bájtnál marad olyan bit, amit még nem használtunk fel semmire. Az első  bájtnál ez változó, ha például kétbájtos a karakter, azaz 110-val kezdődik az első bájt, akkor ott 5 üres bit marad, de a többi bájtnál fix 6 üres bit áll rendelkezésre. Így két bájton 2<sup>5+6</sup> = 2 048-ig lehet elszámolni, három bájton 2<sup>4+6+6</sup> = 65 536-ig, és így tovább.</p>
+<p>Mivel a karaktereket a használathoz mindenképp át kell kódolni, az UTF-8 a big endian és little endian rendszerekkel is kompatibilis (lásd <a class="reference internal" href="#bitek-sorrendje-a-szeles-karakterben"><span class="std std-ref">A bitek sorrendje a széles karakterekben (big endian, little endian és a byte order mark)</span></a> rész). A fájlrendszereken tárolt adatok esetén ez a tulajdonság azért jön kapóra, mert ha kivesszük a háttértárat, és áttesszük egy másik architektúrájú számítógépbe, akkor a számítógép a bitsorrendtől függetlenül képes értelmezni a karaktereket. Ez hasonlóan igaz a hálózaton átküldött szöveges adatokra is, aminek az UTF-8 az igazi népszerűségét köszönheti.</p>
+<p>Kompatibilitási okokból definiálható UTF-8-ban is a BOM. A <a class="reference external" href="https://stackoverflow.com/questions/8432584/how-can-i-make-notepad-to-save-text-in-utf-8-without-the-bom/57210570#57210570">Windows 10 2019-es kiadása előtti verzióknál</a> a Jegyzettömb (Notepad) UTF-8 kódolással való mentéskor a program mindenképp belerakja a fájlba a BOM-ot, ami az egyéb programokat megzavarja, mivel UTF-8 esetén nem számítanak BOM-ra. Emiatt a Notepad használata nem ajánlott, helyette például a Notepad++ használata javasolható. A különféle programnyelvekben a beolvasáskor beállítható, hogy számítsanak UTF-8 esetén a BOM-ra, de kész programoknál ez többnyire nem lehetséges.</p>
+</section>
+<section id="melyik-reprezentacio-mire-jo">
+<h2>Melyik reprezentáció mire jó?<a class="headerlink" href="#melyik-reprezentacio-mire-jo" title="Link to this heading"></a></h2>
+<p>Az UTF-16 kompromisszumos megoldásként a mai napig fontos szerepet tölt be, mivel a rendszer <strong>korai használói (early adopter)</strong>, mint például a <strong>Java</strong> és <strong>JavaScript</strong> programozási nyelvek, valamint a <strong>Windows API-ja</strong> (a <strong>Windows NT 3.1</strong> első 32 bites kiadása 1993-ban) ezt implementálták, és kompatibilitási okokból azóta sem tudták meglépni a váltást. A <strong>Windows XP</strong> (2001) óta <strong>65001-es kódlap</strong> néven elérhető az UTF-8 kódolás, de nem rendszerszinten. 2018 áprilisa óta a Windows 10 és az azóta megjelent Windows 11 béta állapotban szállítja a rendszerszintű UTF-8 kódolást, amelynek használata a Windows 10-ben sok hibát okoz, ezért nem ajánlott. A régóta létező <strong>Unix</strong> és az új <strong>Linux</strong> rendszerek először maradtak a „8-bit tiszta” működésnél (lásd <a class="reference internal" href="nemzetkoziesites_hackelessel.html#karakterhivatkozasok"><span class="std std-ref">Karakterhivatkozások (entitások)</span></a> rész) és az ASCII/Latin kódolásoknál, később pedig átálltak az utóbb megjelent, kompatibilis UTF-8-ra, fenntartva a folyamatos kompatibilitást. Az interpretált programnyelvek (mint a <strong>Python</strong>) belső használatra UTF-32-t használnak, de a külső programokkal (pl. hálózat, háttértár) alapértelmezésben UTF-8-ban, illetve a beállított kódolásban kommunikálnak. Az internetes szöveges protokollok pedig szinte kivétel nélkül átálltak az UTF-8 kódolásra, hiszen kompatibilis az addig használt ASCII-val, helytakarékos, és nem szükséges a karakterek értelmezése (lásd <a class="reference internal" href="nemzetkoziesites_hackelessel.html#karakterhivatkozasok"><span class="std std-ref">Karakterhivatkozások (entitások)</span></a> rész), amelyhez kellene az indexelés.</p>
+<p>Látható tehát, hogy mindegyik reprezentációnak megvan az ideális felhasználási módja. A hálózati átvitelhez és a lemezen való tároláshoz, ahol a karakterek adatként reprezentálódnak, a helytakarékos UTF-8 használatos. Ezzel szemben a programokon belül, ahol potenciálisan nyelvfüggő műveleteket kell végezni az egyes karaktereken, amihez szükséges az indexelés, az UTF-16 vagy szükség esetén az UTF-32 reprezentáció jellemző. Ezzel a Unicode minden modern használati esetet le tud fedni, és teljesíti a tervezett funkcióját.</p>
+</section>
+<section id="a-karakterreprezentacio-konverzios-hibak-es-a-betuszemet-mojibake">
+<span id="betuszemet"></span><h2>A karakterreprezentáció-konverziós hibák és a betűszemét (mojibake)<a class="headerlink" href="#a-karakterreprezentacio-konverzios-hibak-es-a-betuszemet-mojibake" title="Link to this heading"></a></h2>
+<p>A sok reprezentáció közötti átalakítás nem mindig zökkenőmentes, de a régi szövegek konverziójakor is előfordulhatnak hibák. Ilyenkor nagyon fontos tudnunk, hogy mire számíthatunk, és mit szeretnénk elérni, hogy elkerüljük a duplán kódolt karakterhivatkozásokat vagy az adatvesztést amiatt, mert egy kevesebb karaktert reprezentálni tudó rendszerbe illesztjük a bemenetünket (pl. ASCII kompatibilis <em>JSON-t</em> készítünk, amely az alapbeállítás Pythonban, lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kodtablafuggetlen-karakterhivatkozasok"><span class="std std-ref">Kódtáblafüggetlen karakterhivatkozások előállítása és feloldása</span></a> rész). Amikor a konverzió nem sikerül, akkor az így keletkezett zavaros karakterhalmazt hívjuk <strong>betűszemétnek</strong>, angolul „mojibake”-nek. A karakterek bájtokká alakítására és a bájtok karakterekre alakítására a következő beállítások állnak rendelkezésre (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#python-bajtok-es-karakterek"><span class="std std-ref">A Python hozzáállása a bájtokhoz és karakterekhez</span></a> rész):</p>
+<ul class="simple">
+<li><p><strong>strict</strong>: Az első nem helyesen kódolt karakter beolvasásánál vagy a kimeneti kódlapon nem kódolható karakter írásánál hibát ad.</p></li>
+<li><p><strong>ignore</strong>: (A fenti) hibák esetén a kérdéses karaktert kihagyva folytatja a (de)kódolást. (Mindenképp lefut, de adatvesztés keletkezhet.)</p></li>
+<li><p><strong>replace</strong>: (A fenti) hibák esetén a kérdéses karaktert kicseréli „replacement karakterre” (<code class="docutils literal notranslate"><span class="pre">�</span></code>), amely kizárólag a hibásan kódolt karakterek jelzésére fenntartott „extremális” karakter. (Mindenképp lefut, de adatvesztés keletkezhet.)</p></li>
+<li><p><strong>backslashreplace</strong> (csak Python): A nem dekódolható bájtokat átalakítja <code class="docutils literal notranslate"><span class="pre">\xNN</span></code> formára, a nem kódolható karaktereket <code class="docutils literal notranslate"><span class="pre">\uNNNN</span></code> alakúra.</p></li>
+<li><p><strong>xmlcharrefreplace</strong> és <strong>namereplace</strong> (csak Python, csak kódolásnál): A nem kódolható karaktereket átalakítja XML karakterhivatkozás vagy név szerinti Unicode hivatkozás formátumra.</p></li>
+<li><p><strong>transliterate</strong> (csak <code class="docutils literal notranslate"><span class="pre">iconv</span></code>, csak kódolásnál): A nem kódolható karaktert kicseréli egy hasonló glifájú karakterre, pl. <code class="docutils literal notranslate"><span class="pre">é</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">e</span></code>. (Mindenképp lefut, de adatvesztés keletkezhet.)</p></li>
+<li><p><strong>escape</strong>: A nem kódolható karaktereket <strong>XML</strong> (&amp;…;)/<strong>hexadecimális</strong> (x1234)/<strong>Unicode</strong> (uXXXX)/N{…} alakú hivatkozássá alakítja, illetve ezeket visszaalakítja.</p></li>
+</ul>
+<p>A HTML és XML fájlokban szövegesen meg lehet jelölni a dokumentum kódolását, amely kiolvasható ASCII betűkkel, mivel a fájl elején direkt csak ilyen karakterek szerepelnek. Ekkor a feldolgozó program átváltja a kódolást továbbhaladás előtt, vagy újra megnyitja a fájlt helyes kódolással, feltételezve, hogy az adat megfelel a jelzett formátumnak. Furcsa hibákat tud eredményezni, ha a jelzett kódolás és a valódi kódolás eltér, mégis gyakorlatban előfordul ilyen eset is. A hibás konverzió megtörténhet például a különböző Latin kódolások keverésével, vagy pedig egy UTF-8 bájtsorozat Latin kódolásúként való megnyitásával. Ilyenkor mindegyik változat beolvasható, „helyes” (valid) kódolást eredményez, de máshogy konvertálódik és jelenik meg:</p>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p class="centered">
+<strong>Valódi</strong></p><p class="centered">
+<strong>kódolás</strong></p></th>
+<th class="head"><p class="centered">
+<strong>Kódolás,</strong></p><p class="centered">
+<strong>amiben</strong></p><p class="centered">
+<strong>megnyitjuk</strong></p><p class="centered">
+<strong>(deklarált)</strong></p></th>
+<th class="head"><p class="centered">
+<strong>Eredmény</strong></p></th>
+<th class="head"><p class="centered">
+<strong>Megjegyzés</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Latin-1</p></td>
+<td><p>Latin-2</p></td>
+<td><p>árvíztűrőtükörfúrógép</p></td>
+<td><p>magyar ű és ő betűk</p></td>
+</tr>
+<tr class="row-odd"><td><p>Latin-2</p></td>
+<td><p>Latin-1</p></td>
+<td><p>árvíztûrõtükörfúrógép</p></td>
+<td><p>kalapos ű és hullámos ő</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">Latin-1</div>
+<div class="line">/Latin-2</div>
+</div>
+</td>
+<td><p>UTF-8</p></td>
+<td><div class="line-block">
+<div class="line">�rv�zt�r�t�k�rf�r�g�p</div>
+<div class="line">rvztrtkrfrgp</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">a dekódolástól függően</div>
+<div class="line">(replace vs. ignore)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>UTF-8</p></td>
+<td><p>Latin-1</p></td>
+<td><p>Ã¡rvÃxadztÅ±rÅx91tÃ¼kÃ¶rfÃºrÃ³gÃ©p</p></td>
+<td><p>mojibake</p></td>
+</tr>
+<tr class="row-even"><td><p>UTF-8</p></td>
+<td><p>Latin-2</p></td>
+<td><p>ĂĄrvĂxadztĹąrĹx91tĂźkĂśrfĂşrĂłgĂŠp</p></td>
+<td><div class="line-block">
+<div class="line">mojibake</div>
+<div class="line">(más mint a Latin-1-nél)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A szövegfájlokat karakterhivatkozásokkal tarkítva (pl. JSON) még összetettebb hibákat lehet kapni (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kodolasi-hibak-furcsasagok"><span class="std std-ref">Kódolási hibák, furcsaságok</span></a> rész). Ráadásul az eredményt UTF-8 formátumban mentve észrevétlenül tovább lehet súlyosbítani a helyzetet, hiszen kódolás szempontjából helyes UTF-8 lesz a mojibake adatunk. Szerencsére a fájl utólag is javítható, ha a hibás konverziót visszafelé elvégezzük, és a helyes kódolásban nyitjuk meg a fájlt.</p>
+<p>Az ilyen, a kódolás szempontjából helyes, de a felhasználó céljával nem egyező kimeneti esetek számosságából következik, hogy a valódi karakterkódolást 100%-osan nem lehet meghatározni automatikus módszerekkel, de karakterstatisztikák és bitminták segítségével jó hatékonysággal meg lehet tippelni. A <code class="docutils literal notranslate"><span class="pre">chardet</span></code> könyvtár a de facto sztenderd megoldás a karakterkódolás automatikus felismerésére, és a legtöbb esetben működik is. Ugyanakkor <a class="reference external" href="https://github.com/chardet/chardet/commit/da6c0a079c41683ca475e28364fcf9c4d34f4359">a Latin-2 kódtáblával kódolt magyar nyelv felismerése már évek óta ki van kapcsolva benne</a>, ezért általában török kódtáblának ismeri fel az ilyen szövegeket.
+Linux alatt elérhetőek az <code class="docutils literal notranslate"><span class="pre">iconv</span></code> és az <code class="docutils literal notranslate"><span class="pre">icu</span></code> programok, melyek a fájlok konverzióját egyszerűen el tudják végezni, így megfelelő paraméterek megtalálása esetén a javítás már triviális. Érdekesség, hogy <a class="reference external" href="https://hup.hu/cikkek/20100617/bsdl-es_iconv_a_freebsd_alaprendszerhez">az iconv program megengedő, BSDL licencű implementációját Kövesdán Gábor BME mérnök informatikus hallgató írta meg BSc szakdolgozata részeként.</a></p>
+<p>Előfordulhat, hogy a különböző fájlrendszerekből származó fájlok és mappák nevében található ékezetek szenvednek konverziós hibától. A főbb mai fájlrendszerek alatt használható fájlnévkonvenciók szerint a fájlok neve maximum 127 darab bármilyen UTF-16 (Unicode BMP) kódolás karakter lehet, mely osztályból kivételt képeznek a speciális jelentéssel bíró karakterek és karaktersorozatok például a <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">..</span></code> és a mappa elválasztó <code class="docutils literal notranslate"><span class="pre">/</span></code>, más néven fordított törtvonal. A rosszul kódolt fájlnevek tömeges átnevezését segítő program, a <code class="docutils literal notranslate"><span class="pre">convmv</span></code>, az <code class="docutils literal notranslate"><span class="pre">iconv</span></code> programhoz hasonlóan csak a bemeneti és kimeneti karakterkódolás megadását igényli. ZIP fájlok esetében előfordul, hogy ha az archivált fájlnevek ékezetet tartalmaznak és nem UTF-8 kódolással vannak kódolva, a fájlok és mappák neveiben az ékezetek elromlanak. Például a Windows tömörített mappa funkciójával tömörített fájlok Linux alatti kibontásánál. Ilyenkor meg kell adni a megfelelő kódtáblát a helyes fájlnevek előállításához (lásd <a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#ekezetes-zip-kitomorites"><span class="std std-ref">Ékezetes fájlneveket tartalmazó ZIP archívum kitömörítése</span></a> rész).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="unicode_szemlelete.html" class="btn btn-neutral float-left" title="A Unicode szemlélete" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="karakterkodolas_a_gyakorlatban.html" class="btn btn-neutral float-right" title="Karakterkódolás a gyakorlatban" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ELTE-DH. Az anyag a Creative Commons, Nevezd meg! - Így add tovább! CC-BY-SA 4.0 Nemzetközi Licenc feltételeinek megfelelően, permalinkes (kattintható és az adott cikkre mutató) forrásmegjelöléssel szabadon felhasználható.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

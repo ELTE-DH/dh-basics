@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karakterkódolás &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bevezetés" href="bevezetes.html" />
+    <link rel="prev" title="Digitális bölcsészet alapok" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Digitális bölcsészet alapok
+          </a>
+              <div class="version">
+                1.0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Karakterkódolás</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bevezetes.html">Bevezetés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html">Absztrakciós szintek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html">A karakterkódolás története</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html">ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="iso8859_csalad.html">Az ISO 8859 család</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html">Nemzetköziesítés hackeléssel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html">A Unicode szemlélete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html">A Unicode reprezentációk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html">Karakterkódolás a gyakorlatban</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../impresszum.html">Impresszum</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Digitális bölcsészet alapok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Karakterkódolás</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/karakterkodolas/karakterkodolas_index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="karakterkodolas">
+<h1>Karakterkódolás<a class="headerlink" href="#karakterkodolas" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bevezetes.html">Bevezetés</a></li>
+<li class="toctree-l1"><a class="reference internal" href="absztrakcios_szintek.html">Absztrakciós szintek</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html#billentyukodok">Billentyűkódok</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html#karakterek-es-nyelvek-lokalizacio-absztrakt-modon">Karakterek és nyelvek (lokalizáció absztrakt módon)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html#glifak">Glifák</a></li>
+<li class="toctree-l2"><a class="reference internal" href="absztrakcios_szintek.html#betutipusok">Betűtípusok</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="karakterkodolas_tortenete.html">A karakterkódolás története</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html#nyomtatas-es-az-olombetuk">Nyomtatás és az ólombetűk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html#primitiv-vezetek-nelkuli-atvitel">Primitív vezeték nélküli átvitel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html#radio-es-a-csatornaorientalt-atvitel">Rádió- és a csatornaorientált átvitel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html#mechanikus-kodolasok-braille-iras-es-morse-kod">Mechanikus kódolások (Braille-írás és Morse-kód)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html#a-bevitel-gyorsitasa-irogeppel">A bevitel gyorsítása írógéppel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html#iras-kozbeni-formazas-es-egyeb-vezerloelemek-irogepen-es-kepernyon">Írás közbeni formázás és egyéb vezérlőelemek írógépen és képernyőn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_tortenete.html#osszefoglalas">Összefoglalás</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ascii.html">ASCII</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html#a-szokas-hatalma">A szokás hatalma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html#a-vezerlokarakterek">A vezérlőkarakterek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html#a-reprezentacio">A reprezentáció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html#a-kis-es-nagybetusites">A kis- és nagybetűsítés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii.html#ascii-rajzok-ascii-art">ASCII rajzok (ASCII art)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iso8859_csalad.html">Az ISO 8859 család</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nemzetkoziesites_hackelessel.html">Nemzetköziesítés hackeléssel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html#binaris-formatumok">Bináris formátumok</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html#karakterhivatkozasok-entitasok">Karakterhivatkozások (entitások)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nemzetkoziesites_hackelessel.html#repulo-ekezetek-es-proszeky-kod">Repülő ékezetek és Prószéky-kód</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unicode_szemlelete.html">A Unicode szemlélete</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html#a-unicode-felepitese">A Unicode felépítése</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html#tulajdonsagok">Tulajdonságok</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html#normalizacio-es-spam-szures">Normalizáció és SPAM szűrés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html#a-megjelenites-es-a-kombinalhatosag-modern-felhasznalasa-emotikonok-es-emojik">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html#lokalizacio">Lokalizáció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_szemlelete.html#a-kis-es-nagybetusites-furcsasagai">A kis- és nagybetűsítés furcsaságai</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unicode_reprezentaciok.html">A Unicode reprezentációk</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html#elet-egy-bajton-tul-a-szeles-karakterek-es-az-utf-16-32">Élet egy bájton túl (a széles karakterek és az UTF-16/32)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html#a-bitek-sorrendje-a-szeles-karakterekben-big-endian-little-endian-es-a-byte-order-mark">A bitek sorrendje a széles karakterekben (big endian, little endian és a byte order mark)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html#utf-8-a-tobb-bajtos-nem-fix-szelessegu-karakterkodolas">UTF-8, a több bájtos, nem fix szélességű karakterkódolás</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html#melyik-reprezentacio-mire-jo">Melyik reprezentáció mire jó?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unicode_reprezentaciok.html#a-karakterreprezentacio-konverzios-hibak-es-a-betuszemet-mojibake">A karakterreprezentáció-konverziós hibák és a betűszemét (mojibake)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html">Karakterkódolás a gyakorlatban</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#ascii-karakterhivatkozasok-feherszokozok">ASCII karakterhivatkozások (fehérszóközök)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#unicode-karakterhivatkozasok">Unicode karakterhivatkozások</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kodtablafuggetlen-karakterhivatkozasok-eloallitasa-es-feloldasa">Kódtáblafüggetlen karakterhivatkozások előállítása és feloldása</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-base64-kodolas">A Base64 kódolás</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-quoted-printable-kodolas">A Quoted-Printable kódolás</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#ekezetes-fajlneveket-tartalmazo-zip-archivum-kitomoritese">Ékezetes fájlneveket tartalmazó ZIP archívum kitömörítése</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kulonfele-sorvegek">Különféle sorvégek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#lokalizacio-es-rendezes">Lokalizáció és rendezés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kis-es-nagybetusites">Kis- és nagybetűsítés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-bom-byte-order-mark">A BOM (byte order mark)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-python-hozzaallasa-a-bajtokhoz-es-karakterekhez">A Python hozzáállása a bájtokhoz és karakterekhez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-fajlok-kodolasanak-explicit-megadasa">A fájlok kódolásának explicit megadása</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#kodolasi-hibak-furcsasagok">Kódolási hibák, furcsaságok</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#karakterek-nyomtatasbeli-szelessegenek-meghatarozasa">Karakterek nyomtatásbeli szélességének meghatározása</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#a-felteteles-kotojel-kiszedese-a-szovegbol">A feltételes kötőjel kiszedése a szövegből</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#nem-unicode-kompatibilis-parancsok-futtatasa">Nem Unicode kompatibilis parancsok futtatása</a></li>
+<li class="toctree-l2"><a class="reference internal" href="karakterkodolas_a_gyakorlatban.html#ascii-rajzok-es-videok">ASCII rajzok és videók</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Digitális bölcsészet alapok" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bevezetes.html" class="btn btn-neutral float-right" title="Bevezetés" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, ELTE-DH. Az anyag a Creative Commons, Nevezd meg! - Így add tovább! CC-BY-SA 4.0 Nemzetközi Licenc feltételeinek megfelelően, permalinkes (kattintható és az adott cikkre mutató) forrásmegjelöléssel szabadon felhasználható.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
