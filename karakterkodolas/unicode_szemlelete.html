@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A Unicode szemlélete &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=8d563738"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -36,9 +34,6 @@
           <a href="../index.html" class="icon icon-home">
             Digitális bölcsészet alapok
           </a>
-              <div class="version">
-                1.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -114,7 +109,8 @@
 <p>Minden karakter kap egy számot (un. <strong>kódpontot</strong>). Az <a class="reference internal" href="ascii.html#ascii"><span class="std std-ref">ASCII kódtábla</span></a> összes karakteréhez tartozó kódpont át lett véve (mint a legtöbb karakterkódolási standard esetében), így a benne foglalt karakterek szintjén – és az UTF-8 kódolási forma esetében a reprezentáció szintjén is (lásd <a class="reference internal" href="unicode_reprezentaciok.html#utf8"><span class="std std-ref">UTF-8, a több bájtos, nem fix szélességű karakterkódolás</span></a> rész) – visszafelé kompatibilis az ASCII kódtáblát használó régebbi rendszerekkel. A többi karakterkódoláshoz képest a Unicode-ban a reprezentáció teljesen külön lett választva a karakter definíciójától, mivel egy karakter akár többféleképpen is reprezentálható (multibyte vs. wide character reprezentációk).</p>
 <p>Ahogy az ASCII kódtábla esetében, a karakterek itt is tudatosan vannak elhelyezve: a kódtábla 16 bites, úgynevezett <strong>síkokra</strong> van osztva. Összesen 17 sík van, darabonként 65 536, azaz összesen 1 114 112 kódpont. Az első sík az <strong>alapszintű többnyelvű sík (BMP – Basic Multilingual Plane)</strong>, ez tartalmazza majdnem az összes ma használatos karaktert, és lehetővé teszi a szinte határtalan bővíthetőséget. A síkokon belül nevekkel ellátott, különböző méretű <strong>blokkok</strong> találhatók. A „sima” karakterek mellett vannak speciális, például kombinálódó karakterek is (lásd <a class="reference internal" href="karakterkodolas_tortenete.html#nyomtatas-es-olombetuk"><span class="std std-ref">Nyomtatás és az ólombetűk</span></a> valamint <a class="reference internal" href="#megjelenites-es-komb"><span class="std std-ref">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</span></a> részek), amelyekkel szinte a végtelenségig bővíthető a kódtábla kifejező ereje.</p>
 <figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="../_images/unichart-printed.jpg"><img alt="../_images/unichart-printed.jpg" src="../_images/unichart-printed.jpg" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/unichart-printed.jpg"><img alt="../_images/unichart-printed.jpg" src="../_images/unichart-printed.jpg" style="width: 500px;" />
+</a>
 <figcaption>
 <p><span class="caption-text"><a class="reference external" href="https://ian-albert.com/unicode_chart/">Ian Albert</a> így vizualizálta az egész Unicode táblázatot (forrás: <a class="reference external" href="https://xivilization.net/~marek/tex/unicode/unichart-printed.jpg">https://xivilization.net/~marek/tex/unicode/unichart-printed.jpg</a>).</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
@@ -122,19 +118,22 @@
 <p>A kódpontok jelölése <strong>U+XXXX</strong>, amelyekben az XXXX legalább 4 darab <strong>hexadecimális számjegy</strong>. Az egyes betűkészletek eldönthetik, hogy rendelnek-e glifát az adott kódponthoz, így nem minden karakternek van minden betűkészletben megfelelője, és a megjelenésük betűkészletenként eltérhet (lásd <a class="reference internal" href="absztrakcios_szintek.html#betutipusok"><span class="std std-ref">Betűtípusok</span></a> valamint <a class="reference internal" href="#megjelenites-es-komb"><span class="std std-ref">A megjelenítés és a kombinálhatóság modern felhasználása (emotikonok és emojik)</span></a> részek).</p>
 <p>Az alábbiakban a Unicode kódtábla karaktereiből mutatunk be néhány példát.</p>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../_images/unc1.png"><img alt="../_images/unc1.png" src="../_images/unc1.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/unc1.png"><img alt="../_images/unc1.png" src="../_images/unc1.png" style="width: 200px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A szkíta „kha” karakter kapta például a 43 155 kódpontot (U+A893).</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="../_images/unc2.png"><img alt="../_images/unc2.png" src="../_images/unc2.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/unc2.png"><img alt="../_images/unc2.png" src="../_images/unc2.png" style="width: 200px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A bizánci zenei jelek közül az „Oxeia Dipli” kapta a 118 788 kódpontot (U+1D004).</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id9">
-<a class="reference internal image-reference" href="../_images/unc3.png"><img alt="../_images/unc3.png" src="../_images/unc3.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/unc3.png"><img alt="../_images/unc3.png" src="../_images/unc3.png" style="width: 200px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A <em>225 fokban elforgatott fekete huszár (sakk)</em> pedig a 129 585 kódpontot (U+1FA31).</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>

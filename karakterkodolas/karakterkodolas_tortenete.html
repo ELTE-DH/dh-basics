@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A karakterkódolás története &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=8d563738"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -36,9 +34,6 @@
           <a href="../index.html" class="icon icon-home">
             Digitális bölcsészet alapok
           </a>
-              <div class="version">
-                1.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -106,7 +101,8 @@
 <p>Az első elektronikus karakterkódolások megjelenésekor is már évszázados múltra visszatekintő könyvnyomtatás (1440, Illusztráció: <a class="reference external" href="https://www.youtube.com/watch?v=cIwcRyaomzQ">Family Guy (S11E7) - What can the obsession do! Gutenberg and the printing press</a>), amely a glifák és a karakterek rendszerezésének kihívásait (<strong>tipográfia</strong>) már tudományként kezelte, nem foglalkozik a karakterkódolás absztrakt szintjeivel.</p>
 <p>A nyomtatott szövegek az információ nyilvános terjesztését és megőrzését célozták, mivel a nyomtatás technológiája sokáig (lásd <a class="reference internal" href="#bevitel-gyorsitasa"><span class="std std-ref">A bevitel gyorsítása írógéppel</span></a> rész) kevesek számára volt hozzáférhető. A nyomtatásban a kódoló és a befogadó is ember, csak a sokszorosítás van automatizálva. Alapvetően a szöveg betűnként, <strong>ólomnyomatokból</strong> van kirakva („betűz(del)ve” egymás mellé), de érdemes megfigyelni, hogy bizonyos <em>betűtípusoknál</em> az egyes betűk egymás után következése speciális szabályok alkalmazását igényli, ahogy a kézírásban vagy a beszédben is. Például az <strong>ikerbetűknél (ligatúra)</strong> speciális jeleket kell használni két karakter együttes előfordulásához (latin <em>„AE”</em>, német <em>„Eszett”, németül „scharfes S”</em> (<code class="docutils literal notranslate"><span class="pre">ß</span></code>) vagy a nem nyelvspecifikus <em>„fi”</em> kapcsolat, ahol az f áthúzása átnyúlik az i pontjába). Mivel önálló glifákat alkotnak, <a class="reference external" href="https://fonts.google.com/knowledge/glossary/ligature">a betűkészleteknek kell tartalmaznia őket</a>, ami nem mindig történik meg. Ez a jelenség utólag tekinthető úgy is, mint a karakterek kombinálhatóságának előfutára.</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/k_t1.png"><img alt="../_images/k_t1.png" src="../_images/k_t1.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/k_t1.png"><img alt="../_images/k_t1.png" src="../_images/k_t1.png" style="width: 500px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Könyvnyomtató ólombetűk (forrás: <a class="reference external" href="https://pixabay.com/photos/letters-pressure-plate-pressure-3665281/">pixabay</a>)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
@@ -128,14 +124,16 @@
 <p>A <strong>Braille-írás</strong> (1821) egyfajta <strong>bináris karakterkódolást</strong> alkalmaz írott formában, azaz két jel, a „pont” és „semmi” kombinációjával kódolja a betűket. A Braille-írás a Napóleon által rendelt <a class="reference external" href="https://en.wikipedia.org/wiki/Night_writing">éjszakai írás (night writing)</a> egyszerűsítéseként készült. Az <strong>éjszakai írás</strong> a katonák csatatéri kommunikációját volt hivatott fény és zaj nélkül (lásd <a class="reference internal" href="#primitiv-vezetek-nelkuli-atvitel"><span class="std std-ref">Primitív vezeték nélküli átvitel</span></a> rész) megoldani. Nem betűket, hanem <em>fonémákat</em> jelöl, és nem tartalmaz számokat és <em>punktuációkat</em> (azaz központozást). A legszembetűnőbb különbség Braille rendszerével az, hogy kétszer 6 pontot használ (vö. kétszer három pont). A 6 pont viszont nem fér el az olvasó ujjbegye alatt, és a függőleges keresés miatt lassítja az olvasást, emellett a pontok sorrendje sem vesz részt a kódolásban.</p>
 <p>Ezeket a hiányosságokat felismerve Braille kétszer hármas táblázatban, összesen maximum hat helyen pontokkal, azok hiányával és az így alkotott mintákkal jeleníti meg az ábécé betűit. A reprezentáció határai egyúttal előrevetítik, hogy mivel csak hat pontot használ egy karakter megjelenítésére, csak véges számú karaktert (2<sup>6</sup> = 64) képes tárolni (vö. a 24 betűs angol ábécé + 10 számjegy), ami az embereknek sok, de a gépek számára hamar kevésnek bizonyulhat. További érdekes tulajdonsága, hogy a <em>megjelenítéstől független</em>, azaz a pontok minősége alig tud eltérni a használhatóság határain belül, az ilyen eltéréseknek pedig nincs jelentősége. Emellett elvi szinten <em>jól automatizálható</em> az írása és olvasása, <em>az üzenet „értése” nélkül</em> is, de mivel papíralapú, nem fejlődött tovább.</p>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/k_t2.png"><img alt="../_images/k_t2.png" src="../_images/k_t2.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/k_t2.png"><img alt="../_images/k_t2.png" src="../_images/k_t2.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Braille-írásban az a szó, hogy „karakter”</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Az 1840-es években megjelent <strong>Morse-kód</strong> az első elektromosan továbbított karakterkódolás. Rövid és hosszú jelek kombinációjával lehet reprezentálni a latin betűket és az arab számokat:</p>
 <figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="../_images/k_t3.png"><img alt="../_images/k_t3.png" src="../_images/k_t3.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/k_t3.png"><img alt="../_images/k_t3.png" src="../_images/k_t3.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Morse-kódban a „karakter” szó</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
@@ -151,7 +149,8 @@
 <p>A könyvnyomtatás demokratizálódott az írógépek által az 1880-as években. A képzett személyzet viszont túl gyors volt a géphez képest. Az egymás után következő betűk leütése miatt ki kellett találni egy olyan módszert, amivel az <strong>írógépen</strong> az írás sebessége lépést tud tartani a beszédével (diktálás), vagy ha lehet, még gyorsabb tud lenni (a gépelési hibák javításához és az olyan formázási elemek  elhelyezéséhez, mint a kiemelés <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">A</span> <span class="pre">GY</span> <span class="pre">B</span> <span class="pre">E</span> <span class="pre">T</span> <span class="pre">Ű</span> <span class="pre">K</span>&#160; <span class="pre">É</span> <span class="pre">S</span>&#160; <span class="pre">SZ</span> <span class="pre">Ó</span> <span class="pre">K</span> <span class="pre">Ö</span> <span class="pre">Z</span> <span class="pre">Ö</span> <span class="pre">K</span></code> által, <strong>betűritkítással</strong>). Az írógépek közül a <strong>karos írógépek</strong> váltak be a legjobban, de rossz időzítéssel leütve még ezek <em>karjai</em> is összeakadhatnak.</p>
 <p>Eredetileg az írógépek csak <em>nagy betűket</em> tudtak írni („nyomtatott” betűk), mivel a kis- és nagybetűk különböző jeleket igényeltek, de nem növekedhetett tovább a <em>billentyűk (karok)</em> száma a <strong>betűkosárban</strong>. A megoldás a <strong>shift</strong> billentyű volt (1878), amely „kimozdította a papírt” – a henger felemelkedett vagy a betűkosár lesüllyedt – a helyéről, hogy a betűkhöz rendelt billentyűk karjai más ponton érjenek a papírhoz. A <strong>caps lock</strong> (a caps a „capitals”, azaz a „nagybetű” szó rövidítése) billentyűvel lehetett ezt az állapotot a shift billentyű folyamatos lenyomása nélkül „zárolni”, illetve feloldani, ahogy a mai billentyűzeteken is. Manapság ez úgy értendő, mintha valaki „írásban kiabálna”. (Illusztráció: <a class="reference external" href="https://web.archive.org/web/20230714144257/http://bash.org/?835030">http://bash.org/?835030</a>)</p>
 <figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../_images/k_t4.gif"><img alt="../_images/k_t4.gif" src="../_images/k_t4.gif" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/k_t4.gif"><img alt="../_images/k_t4.gif" src="../_images/k_t4.gif" style="width: 500px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A <em>shift</em> és <em>caps lock</em> billentyűk működése egy írógépen (forrás: <a class="reference external" href="https://www.youtube.com/watch?v=6p7aa56KwZg">typewriter shift (youtube)</a>)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
@@ -164,13 +163,15 @@
 <p>A Morse-kód alapú rendszereknél egy szalagra egy sort nyomtatott a gép, és csak az <em>emberi beavatkozás szükségességét</em> kellett jelezni <strong>csengővel („bell” vezérlőkarakter)</strong> például a szalag elfogyásakor (gyakorlatilag a „sor végén”) vagy az üzenet végén. Az írógépnél viszont megjelent és a mai modern szövegszerkesztőkben szinte változtatás nélkül található meg a <strong>két dimenziós szerkeszthetőség</strong> – eredetileg valós időben és lineárisan –, mely magával hozta a <strong>könyvszerű papírformátumok</strong> kezelésének szükségességét, és konzerválta a mai napig elterjedt 80-karakteres – a papírt 90 fokkal elfordítva 120-karakteres – sor hosszúságot (későbbi <strong>A4-es papír méret</strong> 10-es betűmérettel írva), amelynek eredete legalább az automatizált szövőszékek kezdetleges lyukkártyáiig (1725) vezethető vissza, amelynek formátumát átvette az IBM a saját lyukkártyáihoz (1928).</p>
 <p>A szöveget eredetileg – javítási lehetőség híján – írás közben kellett formázni minimális lassítással (pl. Nagybetűk szóközzel ritkítva: <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">O</span> <span class="pre">N</span> <span class="pre">T</span> <span class="pre">O</span> <span class="pre">S</span> <span class="pre">!</span></code>) a papír méreteit is figyelembe véve. Az így készült szövegek első változata (<strong>piszkozat</strong>), általában javításra, újragépelésre került (<strong>tisztázat</strong>). A papír jobb oldalához, azaz a <em>sor végére</em> érve egyszerre volt szükséges a hengert mozgató <strong>kocsit</strong> a sor elejére vinni a vízszintes tengelyen (<strong>kocsi vissza</strong>, angolul „carriage return” művelet) és a papírt függőlegesen elmozdítani (<strong>soremelés</strong>, angolul „line feed” művelet), hogy a már megírt sor alá kerüljön az írás. Az írógépeken a két műveletet egymás után végrehajtó kézzel működtetett kar emlékét a mai billentyűzeteken az <strong>enter</strong> (régebbi nevén „return”) billentyű, illetve annak fordított L alakja (<code class="docutils literal notranslate"><span class="pre">↵</span></code>) őrzi, valamint ezek a műveletek vezérlőkarakterként máig használatosak és az <em>ASCII kódtáblában</em> is megtalálhatóak (lásd <a class="reference internal" href="ascii.html#a-vezerlokarakterek"><span class="std std-ref">A vezérlőkarakterek</span></a> rész).</p>
 <figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="../_images/k_t6.gif"><img alt="../_images/k_t6.gif" src="../_images/k_t6.gif" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/k_t6.gif"><img alt="../_images/k_t6.gif" src="../_images/k_t6.gif" style="width: 500px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Soremelés után az írógépkocsi visszatér a lap elejére (forrás: <a class="reference external" href="https://giphy.com/gifs/fargofx-fx-story-xUA7bcAJAQJjneG38k">giphy</a>)</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../_images/k_t5.gif"><img alt="../_images/k_t5.gif" src="../_images/k_t5.gif" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/k_t5.gif"><img alt="../_images/k_t5.gif" src="../_images/k_t5.gif" style="width: 500px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A szokás hatalma: soremelés után az írógépkocsi visszatér(ne) a lap elejére (forrás: <a class="reference external" href="https://giphy.com/gifs/absents-l9Jhzwdi09Ve0">giphy</a>)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
@@ -190,7 +191,8 @@
 <span id="karakterkodolas-tortenete-osszefoglalas"></span><h2>Összefoglalás<a class="headerlink" href="#osszefoglalas" title="Link to this heading"></a></h2>
 <p>A <em>rádiózás</em> során a <em>nagy hatótávú, csatornaalapú átvitel</em> problémája megoldódott. Az üzenetek jól <em>automatizálható bináris kódolások</em> segítségével kerültek kódolása. Emiatt a karakterek logikai és fizikai reprezentációja szétvált: egy, a csatornán átküldött atomi jel önmagában nem volt értelmezhető logikailag (pl. a Braille-írásban egy pont), viszont a jelek kombinációinak figyelembe kellett venni a használt csatorna fizikai adottságait (lásd <a class="reference internal" href="nemzetkoziesites_hackelessel.html#karakterhivatkozasok"><span class="std std-ref">Karakterhivatkozások (entitások)</span></a> és <a class="reference internal" href="unicode_reprezentaciok.html#elet-egy-bajton-tul"><span class="std std-ref">Élet egy bájton túl (a széles karakterek és az UTF-16/32)</span></a> rész). A következő megoldandó kérdés az <em>átvitel sebességének korlátja</em> és a kódolást végző <em>képzett kezelőszemélyzet</em> igénye lett. A szélesebb körű elterjedéshez az <em>írógép, mint felhasználói felület</em> integrálása volt szükséges. Az írógépeket eleinte még manuálisan kezelték, később automatizálták működésüket, és összekötötték őket, számos fizikai korlátjuk ellenére.</p>
 <figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="../_images/k_t7.png"><img alt="../_images/k_t7.png" src="../_images/k_t7.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/k_t7.png"><img alt="../_images/k_t7.png" src="../_images/k_t7.png" style="width: 700px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">A bemutatott módszerek és találmányok idővonala.</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>

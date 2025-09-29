@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karakterkódolás a gyakorlatban &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=8d563738"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -36,9 +34,6 @@
           <a href="../index.html" class="icon icon-home">
             Digitális bölcsészet alapok
           </a>
-              <div class="version">
-                1.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -137,7 +132,7 @@
 </div>
 <p>Az utolsó két példában a string UTF-8 kódolású alakjának bájtjai szerepelnek, ezért szükséges a Pythonban a literálist kezdő idézőjel előtt <code class="docutils literal notranslate"><span class="pre">b</span></code> prefixummal jelezni, hogy bájt és nem string literálisról van szó. A bájtszekvenciák a literális stringekkel ellentétben csak ASCII karaktereket és azokkal leírható hivatkozásokat tartalmazhatnak. Az ilyen formában írt hivatkozásokban a bájtok egymás utáni sorozatai összeadják az UTF-8 karaktereket azok láncolatát alkotva. Ezt a bájtsorozatot a <code class="docutils literal notranslate"><span class="pre">decode()</span></code> függvénnyel Unicode stringgé szükséges alakítani kiírás előtt, amennyiben szöveges kiírást szeretnénk. Az utolsó példában a <code class="docutils literal notranslate"><span class="pre">print()</span></code> függvény automatikusan felismeri, ha string helyett bájt szekvenciát kap, és a <code class="docutils literal notranslate"><span class="pre">b</span></code> prefixummal ellátott formában írja ki a bemenetet, nem úgy ahogy várnánk (lásd <a class="reference internal" href="#python-bajtok-es-karakterek"><span class="std std-ref">A Python hozzáállása a bájtokhoz és karakterekhez</span></a> rész).</p>
 <p>A Unicode karakterek nevei és <a class="reference external" href="https://www.unicode.org/reports/tr44/#General_Category_Values">kategóriái</a> az alábbi módon határozhatóak meg:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">unicodedata</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">unicodedata</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">unicodedata</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;ő&quot;</span><span class="p">))</span>
 <span class="go">LATIN SMALL LETTER O WITH DOUBLE ACUTE</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\N{LATIN SMALL LETTER O WITH DOUBLE ACUTE}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -151,7 +146,7 @@
 </pre></div>
 </div>
 <p>A Python beépített reguláris kifejezés motorja nem támogatja a Unicode tulajdonságokat, ugyanakkor ezekre a gyakorlatban csak igen ritkán van szükség. Viszont arra vigyázni kell, hogy a karakterosztályokra illeszkedő reguláris kifejezések, például a számjegyekre illeszkedő <code class="docutils literal notranslate"><span class="pre">\b</span></code> nem csak a latin nyelvekben megszokott <a class="reference external" href="https://hu.wikipedia.org/wiki/Hindu%E2%80%93arab_sz%C3%A1m%C3%ADr%C3%A1s">nyugati arab számokra</a> fog illeszkedni:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Thai számok: </span><span class="se">\u0e55\u0e57</span><span class="s2"> , nyugati arab számok: 57&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="go">Thai számok: ๕๗ , nyugati arab számok: 57</span>
@@ -165,7 +160,7 @@
 <section id="kodtablafuggetlen-karakterhivatkozasok-eloallitasa-es-feloldasa">
 <span id="kodtablafuggetlen-karakterhivatkozasok"></span><h2>Kódtáblafüggetlen karakterhivatkozások előállítása és feloldása<a class="headerlink" href="#kodtablafuggetlen-karakterhivatkozasok-eloallitasa-es-feloldasa" title="Link to this heading"></a></h2>
 <p>A HTML és az XML numerikus hivatkozásainak kezelése rendre decimális és hexadecimális formában, a nem numerikus entitásokhoz hasonlóan működik. Az <code class="docutils literal notranslate"><span class="pre">encode()</span></code> és az <code class="docutils literal notranslate"><span class="pre">escape()</span></code> metódusok csak a nem reprezentálható karaktereket kódolják hivatkozással:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">html</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">html</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">unescape</span><span class="p">(</span><span class="s2">&quot;&amp;#225;&amp;#114;&amp;#118;&amp;#237;&amp;#122;&amp;#116;&amp;#369;&amp;#114;&amp;#337;&amp;#116;&amp;#252;&amp;#107;&amp;#246;&amp;#114;&amp;#102;&amp;#250;&amp;#114;&amp;#243;&amp;#103;&amp;#233;&amp;#112;&quot;</span><span class="p">))</span>
 <span class="go">árvíztűrőtükörfúrógép</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;árvíztűrőtükörfúrógép&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">,</span> <span class="s2">&quot;xmlcharrefreplace&quot;</span><span class="p">)</span>
@@ -179,7 +174,7 @@
 </pre></div>
 </div>
 <p>Az URL-ekben található százalékjeles jelölés kezelése során a <code class="docutils literal notranslate"><span class="pre">quote()</span></code> metódus csak a nem ASCII és nem reprezentálható karaktereket kódolja hivatkozással:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib.parse</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.parse</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%C3%A1rv%C3%ADzt%C5%B1r%C5%91t%C3%BCk%C3%B6rf%C3%BAr%C3%B3g%C3%A9p&quot;</span><span class="p">))</span>
 <span class="go">árvíztűrőtükörfúrógép</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="s2">&quot;árvíztűrőtükörfúrógép &amp; &lt; &gt; &#39; </span><span class="se">\&quot;</span><span class="s2"> </span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">))</span>
@@ -187,7 +182,7 @@
 </pre></div>
 </div>
 <p>A <strong>JSON formátum</strong> akkor használatos, ha rekurzív adatstruktúrákat akarunk átvinni ember által is olvasható, szöveges formában akár különféle programozási nyelvek között. Pythonban az alapbeállítás az, hogy ASCII kompatibilis formában adja meg a karaktereket, de ez felülbírálható:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="s2">&quot;Ez egy stringekből álló lista.&quot;</span><span class="p">,</span> <span class="s2">&quot;árvíztűrőtükörfúrógép&quot;</span><span class="p">]))</span>
 <span class="go">[&quot;Ez egy stringekb\u0151l \u00e1ll\u00f3 lista.&quot;, &quot;\u00e1rv\u00edzt\u0171r\u0151t\u00fck\u00f6rf\u00far\u00f3g\u00e9p&quot;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="s2">&quot;Ez egy stringekből álló lista.&quot;</span><span class="p">,</span> <span class="s2">&quot;árvíztűrőtükörfúrógép&quot;</span><span class="p">],</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
@@ -198,7 +193,7 @@
 <section id="a-base64-kodolas">
 <span id="id3"></span><h2>A Base64 kódolás<a class="headerlink" href="#a-base64-kodolas" title="Link to this heading"></a></h2>
 <p>Pythonban a base64 modul bájtokat vár, így magunknak kell kódolnunk a stringjeinket. A szabványos kódolási módszeren túl lehetőség van a <code class="docutils literal notranslate"><span class="pre">+</span></code> és <code class="docutils literal notranslate"><span class="pre">/</span></code> jelek helyett definiálni karaktereket. Például az URL-ekben ezeknek a karaktereknek szintaktikai jelentése van, így helyettük rendre <code class="docutils literal notranslate"><span class="pre">-</span></code> és <code class="docutils literal notranslate"><span class="pre">_</span></code> jeleket használnak szabványos helyettesítőként. Az <a class="reference external" href="https://hu.wikipedia.org/wiki/PGP">OpenPGP</a> szabványban a Base64 kódoláshoz hasonló, Radix64 módszert alkalmazzák az aláírókulcs reprezentációjára, ami tartalmaz még egy hibajavító kódot, a kimenet végéhez kötelezően hozzáfűzi a bemenet hibajavító, ellenőrző kódját, valamint kötelezően sortörést alkalmaz minden 76. karakter után. Publikus kulcsoknál találkozhatunk vele. A Radix64 kódolás nem a Python sztenderd könyvtár része.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">base64</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="s2">&quot;árvíztűrőtükörfúrógép???&lt; &gt;&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)))</span>
 <span class="go">b&#39;w6FydsOtenTFsXLFkXTDvGvDtnJmw7pyw7Nnw6lwPz8/PCA+&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;w6FydsOtenTFsXLFkXTDvGvDtnJmw7pyw7Nnw6lwPz8/PCA+&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">))</span>
@@ -217,7 +212,7 @@
 <section id="a-quoted-printable-kodolas">
 <span id="id4"></span><h2>A Quoted-Printable kódolás<a class="headerlink" href="#a-quoted-printable-kodolas" title="Link to this heading"></a></h2>
 <p>Az emailek szövegeiben található nem nyomtatható ASCII karakterek kódolására szolgáló Quoted-Printable kódolás előállítása és dekódolása a Python sztenderd könyvtár része. A quopri modul a base64 modulhoz hasonlóan bájtokat vár és ad vissza, így magunknak kell kódolnunk a stringjeinket.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">quopri</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">quopri</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Ez egy hosszú szöveg ékezetekkel. Árvíztűrőtükörfúrógép. De csak a nem ASCII karaktereket változtatja meg.&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">e</span> <span class="o">=</span> <span class="n">quopri</span><span class="o">.</span><span class="n">encodestring</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">e</span>
@@ -310,7 +305,7 @@ $<span class="w"> </span>locale
 </pre></div>
 </div>
 <p>De ha beállítjuk a magyar lokalizációt:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">locale</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">locale</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s2">&quot;hu_HU.UTF-8&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;Á&quot;</span><span class="p">,</span> <span class="s2">&quot;ő&quot;</span><span class="p">,</span> <span class="s2">&quot;Ű&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;ny&quot;</span><span class="p">,</span><span class="s2">&quot;gy&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;13&quot;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="n">locale</span><span class="o">.</span><span class="n">strxfrm</span><span class="p">)</span>
 <span class="go">[&#39;13&#39;, &#39;4&#39;, &#39;a&#39;, &#39;A&#39;, &#39;Á&#39;, &#39;B&#39;, &#39;e&#39;, &#39;gy&#39;, &#39;k&#39;, &#39;ny&#39;, &#39;ő&#39;, &#39;Ű&#39;, &#39;z&#39;]</span>
@@ -334,7 +329,7 @@ egé*sz*en
 <p>[Nincs mód a nagy- és kisbetűk átalakítására és a karakterek osztályozására a nyelvterületnek megfelelően.]</p>
 </div></blockquote>
 <p>Így <a class="reference external" href="https://stackoverflow.com/questions/19703106/python-and-turkish-capitalization/72393581#72393581">a török i-betűk helyes kis- és nagybetűsítésének eléréséhez külső könyvtárat kell használni</a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">icu</span> <span class="kn">import</span> <span class="n">UnicodeString</span><span class="p">,</span> <span class="n">Locale</span>  <span class="c1"># sudo apt install libicu-dev és pip install pyicu</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">icu</span><span class="w"> </span><span class="kn">import</span> <span class="n">UnicodeString</span><span class="p">,</span> <span class="n">Locale</span>  <span class="c1"># sudo apt install libicu-dev és pip install pyicu</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lowercase_i_w_dot</span> <span class="o">=</span> <span class="s2">&quot;i&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">uppercase_i_wo_dot</span> <span class="o">=</span> <span class="s2">&quot;I&quot;</span>
 <span class="go"># A locale beállítása az ICU-ban</span>
@@ -354,7 +349,7 @@ egé*sz*en
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">lowercase_i_wo_dot</span><span class="p">)</span>  <span class="c1"># LATIN SMALL LETTER DOTLESS I</span>
 <span class="go">ı</span>
 <span class="go"># A sima locale állítással nem megy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">locale</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">locale</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s2">&quot;tr_TR.UTF-8&quot;</span><span class="p">)</span>  <span class="c1"># Ha rendszerszinten telepítve van ez a locale</span>
 <span class="go"># Beépített uppercase</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">lowercase_i_w_dot</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>  <span class="c1"># &#39;LATIN CAPITAL LETTER I&#39;</span>
@@ -423,7 +418,7 @@ Létezik az <a class="reference external" href="https://uutils.github.io/">uutil
 <span class="o">&gt;&gt;&gt;</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span> <span class="s2">&quot;replace&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span> <span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 <span class="c1"># Ha egy függvény mindkét formát elfogadja, akkor arra kell számítani, hogy a bemeneti formátumban kapjuk a kimenetet is:</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="s1">&#39;fájl.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;mappa&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 <span class="c1"># Míg bájtként adva a paramétert</span>
@@ -470,7 +465,7 @@ Létezik az <a class="reference external" href="https://uutils.github.io/">uutil
 </pre></div>
 </div>
 <p>Abban az esetben, ha egy HTML vagy XML fájl valódi kódolása eltér a definíciójában szereplő kódolástól (pl. a valódi kódolás UTF-8, de az XML definíciója szerint latin2), akkor a fájl feldolgozása betűszeméthez vezethet, mely nem ad explicit hibaüzenetet, csak rossz adatot. A következőképpen javítható ilyenkor a fájl (az egész fájl memóriába olvasása nélkül):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">codecs</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">codecs</span>
 <span class="go"># 1. A fájl bináris módban történő megnyitása</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fájl.xml&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
 <span class="go"># 2. A fájl valódi kódolásának megfelelő kódolásban történő dekódolását végző iterátor definiálása</span>
@@ -522,8 +517,8 @@ Létezik az <a class="reference external" href="https://uutils.github.io/">uutil
 </div>
 <p>A negyedik sor mutatja, hogy az UTF-8 bájtszekvenciák <code class="docutils literal notranslate"><span class="pre">str</span></code> típusból hogyan alakíthatóak vissza Unicode karakterekké: mivel a hibás string csak ASCII karaktereket tartalmaz, először <code class="docutils literal notranslate"><span class="pre">bytes</span></code> típussá lehet alakítani a tartalom változtatása nélkül. Viszont ekkor még minden escape szekvencia több karakterként (összesen 8 darab) értelmeződik, amit az <code class="docutils literal notranslate"><span class="pre">unicode-escape</span></code> kódolás átalakít két karakterré, de rosszul. A latin1 kódolás azért szükséges, hogy a tartalom változtatása nélkül <code class="docutils literal notranslate"><span class="pre">bytes</span></code> típussá tudjuk alakítani a stringünket, ami így már két karakter hosszú lesz, és dekódolható a normális UTF-8 kódolással. Az utolsó előtti sorban az elrontott string tartalma explicit módon visszaalakításra kerül <code class="docutils literal notranslate"><span class="pre">bytes</span></code> típusra a tartalom változtatása nélkül, amelyből feloldhatóak a tartalmazott Unicode escape szekvenciák. Az ilyen hibák elkerülésének legjobb módja az, ha csak minimális eszképelést használunk a kódolások során.</p>
 <p>Az alábbi gyakorlati példa mutatja, hogy hányféle eszképelés keveredhet, ha ASCII kompatibilis JSON-ba rakunk HTML kód fragmentumokat, ami manapság igen gyakori:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">html</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">html</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">j</span> <span class="o">=</span> <span class="s1">&#39;{&quot;description&quot;: &quot;&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;&amp;lt;span style=&amp;quot;text-decoration: underline;&amp;quot;&amp;gt;V</span><span class="se">\\</span><span class="s1">u00edzilabda, n</span><span class="se">\\</span><span class="s1">u0151k, bronzm</span><span class="se">\\</span><span class="s1">u00e9rk</span><span class="se">\\</span><span class="s1">u0151z</span><span class="se">\\</span><span class="s1">u00e9s, 16.20&amp;lt;</span><span class="se">\\</span><span class="s1">/span&amp;gt;&amp;lt;</span><span class="se">\\</span><span class="s1">/strong&amp;gt;&amp;lt;br&amp;gt; &amp;lt;em&amp;gt;Eddigi csoportm</span><span class="se">\\</span><span class="s1">u00e9rk</span><span class="se">\\</span><span class="s1">u0151z</span><span class="se">\\</span><span class="s1">u00e9seink&amp;lt;</span><span class="se">\\</span><span class="s1">/em&amp;gt;: &amp;lt;br&amp;gt; </span><span class="se">\\</span><span class="s1">u2013 K</span><span class="se">\\</span><span class="s1">u00edna </span><span class="se">\\</span><span class="s1">u2013 Magyarorsz</span><span class="se">\\</span><span class="s1">u00e1g 11</span><span class="se">\\</span><span class="s1">u201313&amp;lt;br&amp;gt; </span><span class="se">\\</span><span class="s1">u2013 Spanyolorsz</span><span class="se">\\</span><span class="s1">u00e1g </span><span class="se">\\</span><span class="s1">u2013 Magyarorsz</span><span class="se">\\</span><span class="s1">u00e1g 11</span><span class="se">\\</span><span class="s1">u201310&amp;lt;br&amp;gt; </span><span class="se">\\</span><span class="s1">u2013 Magyarorsz</span><span class="se">\\</span><span class="s1">u00e1g </span><span class="se">\\</span><span class="s1">u2013 Egyes</span><span class="se">\\</span><span class="s1">u00fclt </span><span class="se">\\</span><span class="s1">u00c1llamok 6</span><span class="se">\\</span><span class="s1">u201311&amp;lt;br&amp;gt;&amp;lt;em&amp;gt;Negyedd</span><span class="se">\\</span><span class="s1">u00f6nt</span><span class="se">\\</span><span class="s1">u0151&amp;lt;</span><span class="se">\\</span><span class="s1">/em&amp;gt;&amp;lt;br&amp;gt;</span><span class="se">\\</span><span class="s1">u2013 Ausztr</span><span class="se">\\</span><span class="s1">u00e1lia </span><span class="se">\\</span><span class="s1">u2013 Magyarorsz</span><span class="se">\\</span><span class="s1">u00e1g 8</span><span class="se">\\</span><span class="s1">u20138 </span><span class="se">\\</span><span class="s1">u2013 </span><span class="se">\\</span><span class="s1">u00f6tm</span><span class="se">\\</span><span class="s1">u00e9teresekkel 3</span><span class="se">\\</span><span class="s1">u20135&amp;lt;em&amp;gt;&amp;lt;br&amp;gt;El</span><span class="se">\\</span><span class="s1">u0151d</span><span class="se">\\</span><span class="s1">u00f6nt</span><span class="se">\\</span><span class="s1">u0151&amp;lt;</span><span class="se">\\</span><span class="s1">/em&amp;gt;&amp;lt;br&amp;gt; </span><span class="se">\\</span><span class="s1">u2013 Magyarorsz</span><span class="se">\\</span><span class="s1">u00e1g </span><span class="se">\\</span><span class="s1">u2013 Egyes</span><span class="se">\\</span><span class="s1">u00fclt </span><span class="se">\\</span><span class="s1">u00c1llamok 10</span><span class="se">\\</span><span class="s1">u201314&amp;lt;br&amp;gt; &amp;lt;em&amp;gt;Bronzm</span><span class="se">\\</span><span class="s1">u00e9rk</span><span class="se">\\</span><span class="s1">u0151z</span><span class="se">\\</span><span class="s1">u00e9s&amp;lt;</span><span class="se">\\</span><span class="s1">/em&amp;gt;&amp;lt;br&amp;gt; </span><span class="se">\\</span><span class="s1">u2013 Magyarorsz</span><span class="se">\\</span><span class="s1">u00e1g </span><span class="se">\\</span><span class="s1">u2013 Oroszorsz</span><span class="se">\\</span><span class="s1">u00e1g&amp;lt;</span><span class="se">\\</span><span class="s1">/p&amp;gt;&quot;}&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>  <span class="c1"># A JSON gondoskodik a Unicode eszképelés visszaállításáról és a védett per- és fordított perjelekről</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">html_code</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">unescape</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
@@ -536,7 +531,7 @@ Létezik az <a class="reference external" href="https://uutils.github.io/">uutil
 <section id="karakterek-nyomtatasbeli-szelessegenek-meghatarozasa">
 <span id="id9"></span><h2>Karakterek nyomtatásbeli szélességének meghatározása<a class="headerlink" href="#karakterek-nyomtatasbeli-szelessegenek-meghatarozasa" title="Link to this heading"></a></h2>
 <p>A <a class="reference external" href="https://github.com/jquast/wcwidth">wcwidth</a> Python könyvtár ki tudja számolni, hogy a beírt karakter vagy string hány ASCII karakternyi helyet fog foglalni nyomtatásban. Ez elsődlegesen az ázsiai nyelvek esetén érdekes:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">wcwidth</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">wcwidth</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;コンニチハ&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 <span class="go">5</span>

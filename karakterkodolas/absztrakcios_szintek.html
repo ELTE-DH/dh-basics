@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -5,19 +7,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Absztrakciós szintek &mdash; Digitális bölcsészet alapok 1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=8d563738"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -36,9 +34,6 @@
           <a href="../index.html" class="icon icon-home">
             Digitális bölcsészet alapok
           </a>
-              <div class="version">
-                1.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -119,19 +114,23 @@
 <section id="glifak">
 <span id="id3"></span><h2>Glifák<a class="headerlink" href="#glifak" title="Link to this heading"></a></h2>
 <p>Egy karakter megjelenített formáját, vagyis a karakterek „ábráját”, melyet a papíron vagy a számítógépen látunk, hivatalos nevén <strong>glifának</strong> nevezzük. A glifák különféle <strong>betűkészletekben</strong> vannak csoportosítva (betűtípusok/fontok), így egy karakterhez rengeteg glifa tud társulni. Például a kis a betű (<code class="docutils literal notranslate"><span class="pre">a</span></code>) karakterét tudjuk így –</p>
-<a class="reference internal image-reference" href="../_images/comfortaa_kis_a.png"><img alt="../_images/comfortaa_kis_a.png" class="align-center" src="../_images/comfortaa_kis_a.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/comfortaa_kis_a.png"><img alt="../_images/comfortaa_kis_a.png" class="align-center" src="../_images/comfortaa_kis_a.png" style="width: 400px;" />
+</a>
 <p>– és így is –</p>
-<a class="reference internal image-reference" href="../_images/eb_garamond_kis_a.png"><img alt="../_images/eb_garamond_kis_a.png" class="align-center" src="../_images/eb_garamond_kis_a.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../_images/eb_garamond_kis_a.png"><img alt="../_images/eb_garamond_kis_a.png" class="align-center" src="../_images/eb_garamond_kis_a.png" style="width: 450px;" />
+</a>
 <p>– ábrázolni.</p>
 </section>
 <section id="betutipusok">
 <span id="id4"></span><h2>Betűtípusok<a class="headerlink" href="#betutipusok" title="Link to this heading"></a></h2>
 <p>A betűtípusok formátumuk szempontjából lehetnek hagyományos <strong>bittérképes (bitmap)</strong> és modern <strong>vektoros (TrueType)</strong> típusúak. A bittérképes betűkészletben minden mérethez külön „képet” kell tárolni a megfelelő méretű betűk előállításához. Az egyes képek képpontjainak színeihez tartozó fix bithosszúságú értékek sorban egymás után egy úgynevezett „bittérképen” kerülnek tárolásra (lásd még <a class="reference external" href="https://en.wikipedia.org/wiki/BMP_file_format">BMP formátum</a>). Ezzel szemben a vektoros betűtípusok esetén csak a megjelenítéshez felhasznált geometriai alakzatok paraméterei tárolódnak, a különböző betűméretek pedig dinamikusan generálhatóak. A kettő közti különbség praktikusan abban nyilvánul meg, hogy az utóbbi tetszőleges méretre nagyítható úgy, hogy nem veszít élességéből, míg az előbbi kockásodik vagy homályos lesz a nagyítás során, ha az adott méret nincs benne a betűkészletben.</p>
 <p>A betűk formáját tekintve az egyes betűtípusoknak lehet például <em>dőlt</em> és <strong>félkövér</strong> változata, ezek más-más glifával jelennek meg és szigorúan véve külön betűtípusnak számítanak. Egy másféle felosztás szerint a betűtípusok lehetnek <strong>Sans-serif</strong> és <strong>Serif</strong> típusúak. Az előbbibe tartoznak azok az ábrázolások, melyeknek nincs talpa (<strong>talpatlan</strong>), az utóbbiba pedig, melyeknek van (<strong>talpas</strong>).</p>
-<a class="reference internal image-reference" href="../_images/serif_sanserif.png"><img alt="../_images/serif_sanserif.png" class="align-center" src="../_images/serif_sanserif.png" style="width: 261.45px; height: 101.85000000000001px;" /></a>
+<a class="reference internal image-reference" href="../_images/serif_sanserif.png"><img alt="../_images/serif_sanserif.png" class="align-center" src="../_images/serif_sanserif.png" style="width: 261.45px; height: 101.85000000000001px;" />
+</a>
 <p>Mivel az egyes betűkészletek különböző licencekkel rendelkeznek (pl. korlátozott terjeszthetőség, fizetős betűkészletek), bizonyos betűkészletek nem mindig elérhetőek a rendszerben (pl. a <em>Microsoft fontok</em> Linuxon). Előfordulhat az is, hogy a különböző nyelvekre kitalált betűkészletekben bizonyos karakterek (magyarban tipikusan a hosszú ő (<code class="docutils literal notranslate"><span class="pre">ő</span></code>) és hosszú ű (<code class="docutils literal notranslate"><span class="pre">ű</span></code>) nem mindig képezik a betűtípus részét. Mindkét esetben a <strong>helyettesítési szabályoknak</strong> megfelelően az előre telepített elérhető fontokból próbálja a rendszer megjeleníteni a kívánt módon a szöveget. Ezért fordulhat elő, hogy bizonyos betűk nem hasonlítanak a többire, illetve, hogy egy dokumentum más-más rendszerek alatt másképp jelenik meg (lásd <a class="reference internal" href="unicode_szemlelete.html#normalizacio-es-spam-szures"><span class="std std-ref">Normalizáció és SPAM szűrés</span></a> rész).</p>
 <figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../_images/font_helyettesites.png"><img alt="../_images/font_helyettesites.png" src="../_images/font_helyettesites.png" style="width: 662.0px; height: 78.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/font_helyettesites.png"><img alt="../_images/font_helyettesites.png" src="../_images/font_helyettesites.png" style="width: 662.0px; height: 78.0px;" />
+</a>
 <figcaption>
 <p><span class="caption-text">Az eredetileg használni kívánt Betűkészlet (<em>Segoe UI Bold</em>) nem tartalmazza az <code class="docutils literal notranslate"><span class="pre">ő</span></code> és <code class="docutils literal notranslate"><span class="pre">ű</span></code> betűket, így az <strong>helyettesítve van</strong> a <em>Times New Roman</em> betűkészlettel, amiben elérhetőek. (<a class="reference external" href="https://font.download/font/segoe-ui-4">Szabadon kipróbálható.</a>)</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
