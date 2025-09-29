@@ -28,3 +28,11 @@ A közzétett anyag folyamatosan bővül és frissül új témákkal a mindennap
 ## Licenc
 
 Az anyag a [Creative Commons, Nevezd meg! - Így add tovább! CC-BY-SA 4.0 Nemzetközi Licenc](https://creativecommons.org/licenses/by-sa/4.0/deed.hu) feltételeinek megfelelően, permalinkes (kattintható és az adott cikkre mutató) forrásmegjelöléssel szabadon felhasználható.
+
+## Acknowledgements
+
+The authors acknowledge the support of the National Laboratory for Digital
+Heritage. Project no. 2022-2.1.1-NL-2022-00009 has been implemented with the
+support provided by the Ministry of Culture and Innovation of Hungary from the
+National Research, Development and Innovation Fund, financed under the
+2022-2.1.1-NL funding scheme.
